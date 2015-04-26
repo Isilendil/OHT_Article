@@ -1,0 +1,158 @@
+
+\documentclass[twocolumn]{article}
+
+\usepackage{graphicx}
+\usepackage{subfigure}
+
+\begin{document}
+
+\section{Introduction}
+
+\section{Related Work}
+
+\section{Online Heterogeneous Transfer}
+
+\section{Experimental Results}
+
+In this section, we empirically evaluate the performance of proposed online heterogeneous transfer learning algorithms and classic online Passive-Aggressive algorithms (PA).
+Encouraging results demonstrate that the proposed algorithms outperform these algorithms.
+
+% dataset & task description
+\subsection{Dataset}
+Our experiments are conducted for image classification by leveraging information from text data.
+We use NUS-WIDE dataset to generate learning tasks.
+The NUS-WIDE dataset is extracted from Flickr.
+It includes 269,648 images and the associated tags from Flickr, with a total number of 5,018 unique tags.
+An image instance is represented by a feature vector based on SIFT descriptions, and a text instance is represented by a feature vector based on tags.
+There are 81 ground-truth class labels in the dataset.
+We randomly selected 10 classes (bird, boat, car, flower, food, rock, sun, toy, tree) and built $C_{10}^{2} = 45$ binary classification tasks.
+
+We refer the images as data in the target domain, and the tags as the text data in the heterogeneous source domain.
+Each binary classification task has 500 image instances in the target domain, 1,200 text instances in the heterogeneous source domain, and 1,500 co-occurred image-text pairs.
+In order to obtain stable results, we draw 100 times of random permutation of the image instances in the target domain and evaluate the performance of learning algorithms based on average rate of mistakes.
+
+\subsection{Baseline Methods}
+We compare the proposed methods with Passive-Aggressive (PA) online learning algorithms.
+PA algorithm proposed by Crammer et al. does not exploit knowledge from the source domain.
+It deals with the traditional online learning problem in the target domain.
+
+For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks.
+The kernel parameter $\sigma = 8$ for the target domain.
+The regularization parameter $C = 5$, $ \beta = \frac{\sqrt{T}}{\sqrt{T}+\sqrt{2\ln{4}}} $ for OHT2 algorithm.
+In addition, we set the number of nearest neighbors to be considered $K = 10$.
+Sensitivity of parameters will be examined in subsequent sections.
+
+\subsection{Results and Discussion}
+\begin{figure*}[!htb]
+\begin{center}
+  \subfigure[PA vs OHT1]
+  {
+    \label{11}
+    \includegraphics[width=18cm]{11.pdf}
+  }
+  \subfigure[PA vs OHT2]
+  {
+    \label{12}
+    \includegraphics[width=18cm]{12.pdf}
+  }
+\end{center}
+  \caption{Average rate of mistakes on all 45 tasks}
+  \label{Average rate of mistakes on all 45 tasks}
+\end{figure*}
+
+Figure \ref{Average rate of mistakes on all 45 tasks} summarizes the mistake rates of all 45 binary classification tasks.
+The x-axis of the figure refers to the 45 tasks.
+We see that on most tasks, PA has the very high mistake rate, which prove the dificulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
+The observation that our proposed OHT algorithms generally outperform PA validates the effectivity of heterogeneous transfer learning.
+
+\begin{figure*}[!htb]
+\begin{center}
+  %\subfigure[Task 8]
+  %{
+    %\label{fig:subfig:a}
+    %\includegraphics[width=5cm]{task8.pdf}
+  %}
+  \subfigure[Task 35]
+  {
+    \label{task35}
+    \includegraphics[width=5cm]{task35.pdf}
+  }
+  \subfigure[Task 39]
+  {
+    \label{task39}
+    \includegraphics[width=5cm]{task39.pdf}
+  }
+  \subfigure[Task 43]
+  {
+    \label{task43}
+    \includegraphics[width=5cm]{task43.pdf}
+  }
+  \\
+  %\subfigure[Task 17]
+  %{
+    %\label{fig:subfig:e}
+    %\includegraphics[width=5cm]{task17.pdf}
+  %}
+  \subfigure[Task 18]
+  {
+    \label{task18}
+    \includegraphics[width=5cm]{task18.pdf}
+  }
+  \subfigure[Task 30]
+  {
+    \label{task30}
+    \includegraphics[width=5cm]{task30.pdf}
+  }
+  \subfigure[Task 36]
+  {
+    \label{task36}
+    \includegraphics[width=5cm]{task36.pdf}
+  }
+  \caption{Online average rate of mistakes on example tasks}
+  \label{Online average rate of mistakes on example tasks}
+\end{center}
+\end{figure*}
+
+Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several online learning tasks, respectively.
+We observe that on some tasks(e.g., 35, 39 and 43), the online mistake rates of all three algorithms decrease during the period, and OHT algorithms always achieve better performance than PA.
+Furthermore, on some tasks(e.g., 18, 30 and 36), OHT algorithms are able to obtain a good performance at the beginning stage and remain stable in the future.
+These observations verifies that the OHT algorithms indeed transfer useful knowledge from the heterogeneous source domain to the target domain. 
+
+We also analyze the performance difference between PA and two OHT algorithms separately.
+Statistical significance against PA was assessed by paired $t$-test at 0.05 level.
+For each task, a win (or loss) is counted when OHT algorithm is significatly better (or worse) than PA algorithm over 100 trials.
+Otherwise, a tie is recorded.
+The win/tie/loss results is 42/1/2 for competition between OHT1 and PA, and 37/0/8 for competition between  OHT2 and PA.
+This result validates that our OHT algorithms is statistically better than PA algorithm, and OHT1 is more stable than OHT2.
+
+Besides, we make use of Cohen's $d$ value to measure the improvement of our algorithms.
+Generally, $d > 0.8$ indicates a large promotion, and $0.2 < d < 0.8$ indicates a middle promotion.
+In out experiments, OHT1 algorithm achieves large improvement on 39 tasks and middle improvement on 3 tasks.
+For OHT2 algorithms, the numbers are 35 and 2.
+Actually, $d$ is much larger than $0.8$ on most of tasks.
+
+\subsection{Parameters and Running time}
+% parameter sensitivity
+\paragraph{Parameters}
+Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
+Therefor, we only investigate how different values of parameter K affect the classification accuracy of the algorithms.
+We select a number of tasks randomly to evaluate the parameter sensitivity.
+Table shows the performance of the proposed algorithms with varied values of parameter K on task 1.
+We observe that the performance of the algorithms is stable, which validates the insensitivity of parameter K.
+Similar obvervations are obtained on other tasks.
+In consideration of that we employ the weighted K nearest neighbors strategy, it is easy to understand.
+The larger distance a instance in the heterogeneous source domain has, the less impact the instance makes.
+
+% running time
+\paragraph{Running time}
+Table shows the mean and standard deviation of running time of different algorithms on several randomly selected tasks.
+All of the algorithms were implemented in Matlab, and all experiments were run in a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
+From the table, we can see that PA without exploiting knowledge from the source domain is the most efficient.
+Two OHT algorithms are less efficient.
+The main reason of more running time is the searching process for the nearest neighbors.
+Because of the insensitivity of parameter $K$, we can simply make use of all instances in the heterogeneous source domain to decrease the running time and obtain comparable performance.
+
+\section{Conclusion}
+
+
+\end{document}
