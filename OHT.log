@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.5)  27 APR 2015 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.5)  27 APR 2015 15:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,17 +186,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 
-<12.pdf, id=1, 1161.33875pt x 263.98625pt>
-File: 12.pdf Graphic file (type pdf)
- <use 12.pdf>
-Package pdftex.def Info: 12.pdf used on input line 85.
-(pdftex.def)             Requested size: 512.1496pt x 116.41612pt.
+<12_2.pdf, id=1, 1154.3125pt x 263.98625pt>
+File: 12_2.pdf Graphic file (type pdf)
+ <use 12_2.pdf>
+Package pdftex.def Info: 12_2.pdf used on input line 85.
+(pdftex.def)             Requested size: 512.1496pt x 117.1291pt.
 
-<22.pdf, id=2, 1161.33875pt x 263.98625pt>
-File: 22.pdf Graphic file (type pdf)
- <use 22.pdf>
-Package pdftex.def Info: 22.pdf used on input line 90.
-(pdftex.def)             Requested size: 512.1496pt x 116.41612pt.
+<22_2.pdf, id=2, 1154.3125pt x 261.97874pt>
+File: 22_2.pdf Graphic file (type pdf)
+ <use 22_2.pdf>
+Package pdftex.def Info: 22_2.pdf used on input line 90.
+(pdftex.def)             Requested size: 512.1496pt x 116.23839pt.
 
 Overfull \hbox (11.2596pt too wide) in paragraph at lines 85--91
  [][] 
@@ -207,40 +207,40 @@ Overfull \hbox (11.2596pt too wide) in paragraph at lines 85--91
  [] 
  []
 
-<task2.pdf, id=3, 421.575pt x 316.18124pt>
-File: task2.pdf Graphic file (type pdf)
- <use task2.pdf>
-Package pdftex.def Info: task2.pdf used on input line 108.
+<task2_2.pdf, id=3, 421.575pt x 316.18124pt>
+File: task2_2.pdf Graphic file (type pdf)
+ <use task2_2.pdf>
+Package pdftex.def Info: task2_2.pdf used on input line 109.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task14.pdf, id=4, 421.575pt x 316.18124pt>
-File: task14.pdf Graphic file (type pdf)
- <use task14.pdf>
-Package pdftex.def Info: task14.pdf used on input line 113.
+<task14_2.pdf, id=4, 421.575pt x 316.18124pt>
+File: task14_2.pdf Graphic file (type pdf)
+ <use task14_2.pdf>
+Package pdftex.def Info: task14_2.pdf used on input line 114.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task36.pdf, id=5, 421.575pt x 316.18124pt>
-File: task36.pdf Graphic file (type pdf)
- <use task36.pdf>
-Package pdftex.def Info: task36.pdf used on input line 118.
+<task36_2.pdf, id=5, 421.575pt x 316.18124pt>
+File: task36_2.pdf Graphic file (type pdf)
+ <use task36_2.pdf>
+Package pdftex.def Info: task36_2.pdf used on input line 119.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task7.pdf, id=6, 421.575pt x 316.18124pt>
-File: task7.pdf Graphic file (type pdf)
- <use task7.pdf>
-Package pdftex.def Info: task7.pdf used on input line 124.
+<task7_2.pdf, id=6, 421.575pt x 316.18124pt>
+File: task7_2.pdf Graphic file (type pdf)
+ <use task7_2.pdf>
+Package pdftex.def Info: task7_2.pdf used on input line 125.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task16.pdf, id=7, 421.575pt x 316.18124pt>
-File: task16.pdf Graphic file (type pdf)
- <use task16.pdf>
-Package pdftex.def Info: task16.pdf used on input line 129.
+<task16_2.pdf, id=7, 421.575pt x 316.18124pt>
+File: task16_2.pdf Graphic file (type pdf)
+ <use task16_2.pdf>
+Package pdftex.def Info: task16_2.pdf used on input line 130.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task33.pdf, id=8, 421.575pt x 316.18124pt>
-File: task33.pdf Graphic file (type pdf)
- <use task33.pdf>
-Package pdftex.def Info: task33.pdf used on input line 134.
+<task33_2.pdf, id=8, 421.575pt x 316.18124pt>
+File: task33_2.pdf Graphic file (type pdf)
+ <use task33_2.pdf>
+Package pdftex.def Info: task33_2.pdf used on input line 135.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
  [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -249,25 +249,25 @@ Package pdftex.def Info: task33.pdf used on input line 134.
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [2 <./12.pdf> <./22.pdf> <./task2.pdf> <./task14.pdf> <./task36.pdf> <./task7.
-pdf> <./task16.pdf> <./task33.pdf>] <averageeok1.pdf, id=66, 608.2725pt x 426.5
-9375pt>
+ [2 <./12_2.pdf> <./22_2.pdf> <./task2_2.pdf> <./task14_2.pdf> <./task36_2.pdf>
+ <./task7_2.pdf> <./task16_2.pdf> <./task33_2.pdf>]
+<averageeok1.pdf, id=66, 608.2725pt x 426.59375pt>
 File: averageeok1.pdf Graphic file (type pdf)
-
-<use averageeok1.pdf>
-Package pdftex.def Info: averageeok1.pdf used on input line 165.
+ <use averageeok1.pdf>
+Package pdftex.def Info: averageeok1.pdf used on input line 167.
 (pdftex.def)             Requested size: 170.71652pt x 119.72533pt.
- [3
+
+[3
 
  <./averageeok1.pdf>] (./OHT.aux) ) 
 Here is how much of TeX's memory you used:
  1806 strings out of 493117
- 26131 string characters out of 6135433
+ 26211 string characters out of 6135433
  91020 words of memory out of 5000000
  5249 multiletter control sequences out of 15000+600000
  15090 words of font info for 30 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,24p,330b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,10n,24p,342b,255s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2014/texmf-dist/fonts/en
 c/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
@@ -278,7 +278,7 @@ cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></u
 sr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on OHT.pdf (3 pages, 140340 bytes).
+Output written on OHT.pdf (3 pages, 140979 bytes).
 PDF statistics:
  105 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream

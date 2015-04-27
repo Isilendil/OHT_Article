@@ -44,7 +44,7 @@ AAAI creates proceedings, working notes, and technical reports directly from ele
 \section{Experimental Results}
 
 In this section, we empirically evaluate the performance of proposed online heterogeneous transfer learning algorithms and classic online Passive-Aggressive algorithms, which consists of a original version PA and its two variations PA-\uppercase\expandafter{\romannumeral1} and PA-\uppercase\expandafter{\romannumeral2}.
-Encouraging results demonstrate that the proposed algorithms outperform baseline algorithms.
+Encouraging results demonstrate that the proposed algorithms outperform baseline methods.
 
 % dataset & task description
 \subsection{Dataset}
@@ -67,7 +67,7 @@ It deals with the traditional online learning problem in the target domain.
 In addition, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
 Likewise, we have three versions of tow OHT algorithms (OHT$i$, OHT$i$-\uppercase\expandafter{\romannumeral1} and OHT$i$-\uppercase\expandafter{\romannumeral2}, where $i=\{1,2\}$) respectively based on PA algorithm and its variations.
 We conduct three sets of experiments considering three versions separately.
-Each set of experiments compares two OHT methods against Passive-Aggressive algorithm.
+Each set of experiments compares two OHT methods against a Passive-Aggressive algorithm.
 
 For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks.
 The kernel parameter $\sigma = 8$ for the target domain.
@@ -78,73 +78,75 @@ Sensitivity of parameters will be examined in subsequent sections.
 \subsection{Results and Discussion}
 \begin{figure*}[!htb]
 \centering
-  \subfigure[PA vs OHT1]
+  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs OHT1-\uppercase\expandafter{\romannumeral2}]
   {
     \label{11}
-    \includegraphics[width=18cm]{12.pdf}
+    \includegraphics[width=18cm]{12_2.pdf}
   }
-  \subfigure[PA vs OHT2]
+  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs OHT2-\uppercase\expandafter{\romannumeral2}]
   {
     \label{12}
-    \includegraphics[width=18cm]{22.pdf}
+    \includegraphics[width=18cm]{22_2.pdf}
   }
   \caption{Average rate of mistakes on all 45 tasks}
   \label{Average rate of mistakes on all 45 tasks}
 \end{figure*}
 
-Figure \ref{Average rate of mistakes on all 45 tasks} summarizes the mistake rates of all 45 binary classification tasks.
+Figure \ref{Average rate of mistakes on all 45 tasks} summarizes the mistake rates of all 45 binary classification tasks in the third set, which compares OHT1-\uppercase\expandafter{\romannumeral2}, OHT2-\uppercase\expandafter{\romannumeral2} and PA-\uppercase\expandafter{\romannumeral2}.
 The x-axis of the figure refers to the 45 tasks.
-We see that on most tasks, PA has the very high mistake rate, which prove the dificulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
-The observation that our proposed OHT algorithms in general outperform PA validates the effectivity of heterogeneous transfer learning.
-Similar experimental results are ovserved in other two sets.
-Because of the restricted space, we are not able to show them.
+We see that on most tasks, PA-\uppercase\expandafter{\romannumeral2} has the very high mistake rate, which prove the dificulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
+The observation that our proposed OHT methods in general outperform Passive-Aggressive algorithm validates the effectivity of heterogeneous transfer learning.
+Similar experimental results are observed in other two sets.
+Because of the restricted space, we are not able to report them.
+In order to facilitat the description, we denote PA-\uppercase\expandafter{\romannumeral2}, OHT1-\uppercase\expandafter{\romannumeral2} and OHT2-\uppercase\expandafter{\romannumeral2} by PA, OHT1 and OHT2 respectively in the following discussion.
 
 \begin{figure*}[!htb]
 \centering
   \subfigure[Task 2]
   {
     \label{task2}
-    \includegraphics[width=5cm]{task2.pdf}
+    \includegraphics[width=5cm]{task2_2.pdf}
   }
   \subfigure[Task 14]
   {
     \label{task14}
-    \includegraphics[width=5cm]{task14.pdf}
+    \includegraphics[width=5cm]{task14_2.pdf}
   }
   \subfigure[Task 36]
   {
     \label{task36}
-    \includegraphics[width=5cm]{task36.pdf}
+    \includegraphics[width=5cm]{task36_2.pdf}
   }
   \\
   \subfigure[Task 7]
   {
     \label{task7}
-    \includegraphics[width=5cm]{task7.pdf}
+    \includegraphics[width=5cm]{task7_2.pdf}
   }
   \subfigure[Task 16]
   {
     \label{task16}
-    \includegraphics[width=5cm]{task16.pdf}
+    \includegraphics[width=5cm]{task16_2.pdf}
   }
   \subfigure[Task 33]
   {
     \label{task33}
-    \includegraphics[width=5cm]{task33.pdf}
+    \includegraphics[width=5cm]{task33_2.pdf}
   }
   \caption{Online average rate of mistakes on example tasks}
   \label{Online average rate of mistakes on example tasks}
 \end{figure*}
 
 Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several representative online learning tasks, respectively.
-We observe that on some tasks(e.g., 35, 39 and 43), the online mistake rates of all three algorithms decrease during the period, and OHT algorithms always achieve better performance than PA.
+We observe that OHT algorithms usually achieve better performance at the beginning stage.
+On some tasks(e.g., 7, 16 and 33), the online mistake rates of all three algorithms decrease during the period, and OHT methods always obtain better performance than PA algorithm.
 These observations verifies that the OHT algorithms indeed transfer useful knowledge from the heterogeneous source domain to the target domain. 
 
-We also analyze the performance difference between PA and two OHT algorithms separately.
-Statistical significance against PA was assessed by paired $t$-test at 0.05 level.
+We also analyze the performance difference between PA and two OHT algorithms.
+Statistical significance against PA was assessed by paired $t$-test at 0.01 level.
 For each task, a win (or loss) is counted when OHT algorithm is significatly better (or worse) than PA algorithm over 100 trials.
 Otherwise, a tie is recorded.
-The win/tie/loss results is 44/0/1 for competition between OHT1 and PA, and 43/1/1 for competition between  OHT2 and PA.
+The win/tie/loss results is 44/0/1 for competition between OHT1 and PA, and 42/2/1 for competition between  OHT2 and PA.
 This result validates that our OHT algorithms is statistically better than PA algorithm.
 
 Besides, we utilize Cohen's $d$ value to measure the improvement of our algorithms.
