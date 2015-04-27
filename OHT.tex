@@ -14,17 +14,18 @@
 \setlength{\pdfpageheight}{11in}
 \pdfinfo{
 /Title (Online Transfer Learning with Heterogeneous Source)
-/Author (Author1 Author2)}
+/Author (Author1, Author2, Author3)
+/Keywords (Transfer Learning, Heterogeneous Transfer, Online Learning)
+}
 \setcounter{secnumdepth}{0}  
  \begin{document}
 % The file aaai.sty is the style file for AAAI Press 
 % proceedings, working notes, and technical reports.
 %
 \title{Online Transfer Learning with Heterogeneous Source}
-\author{AAAI Press\\
-Association for the Advancement of Artificial Intelligence\\
-2275 East Bayshore Road, Suite 160\\
-Palo Alto, California 94303\\
+\author{Author1\\ Address line\\
+\And Author2 \\ Address line\\
+\And Author3 \\ Address line\\
 }
 \maketitle
 \begin{abstract}
@@ -72,7 +73,7 @@ Sensitivity of parameters will be examined in subsequent sections.
 
 \subsection{Results and Discussion}
 \begin{figure*}[!htb]
-\begin{center}
+\centering
   \subfigure[PA vs OHT1]
   {
     \label{11}
@@ -83,7 +84,6 @@ Sensitivity of parameters will be examined in subsequent sections.
     \label{12}
     \includegraphics[width=18cm]{12.pdf}
   }
-\end{center}
   \caption{Average rate of mistakes on all 45 tasks}
   \label{Average rate of mistakes on all 45 tasks}
 \end{figure*}
@@ -91,10 +91,10 @@ Sensitivity of parameters will be examined in subsequent sections.
 Figure \ref{Average rate of mistakes on all 45 tasks} summarizes the mistake rates of all 45 binary classification tasks.
 The x-axis of the figure refers to the 45 tasks.
 We see that on most tasks, PA has the very high mistake rate, which prove the dificulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
-The observation that our proposed OHT algorithms generally outperform PA validates the effectivity of heterogeneous transfer learning.
+The observation that our proposed OHT algorithms in general outperform PA validates the effectivity of heterogeneous transfer learning.
 
 \begin{figure*}[!htb]
-\begin{center}
+\centering
   %\subfigure[Task 8]
   %{
     %\label{fig:subfig:a}
@@ -138,10 +138,9 @@ The observation that our proposed OHT algorithms generally outperform PA validat
   }
   \caption{Online average rate of mistakes on example tasks}
   \label{Online average rate of mistakes on example tasks}
-\end{center}
 \end{figure*}
 
-Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several online learning tasks, respectively.
+Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several sample online learning tasks, respectively.
 We observe that on some tasks(e.g., 35, 39 and 43), the online mistake rates of all three algorithms decrease during the period, and OHT algorithms always achieve better performance than PA.
 Furthermore, on some tasks(e.g., 18, 30 and 36), OHT algorithms are able to obtain a good performance at the beginning stage and remain stable in the future.
 These observations verifies that the OHT algorithms indeed transfer useful knowledge from the heterogeneous source domain to the target domain. 
@@ -153,43 +152,34 @@ Otherwise, a tie is recorded.
 The win/tie/loss results is 42/1/2 for competition between OHT1 and PA, and 37/0/8 for competition between  OHT2 and PA.
 This result validates that our OHT algorithms is statistically better than PA algorithm, and OHT1 is more stable than OHT2.
 
-Besides, we make use of Cohen's $d$ value to measure the improvement of our algorithms.
-Generally, $d > 0.8$ indicates a large promotion, and $0.2 < d < 0.8$ indicates a middle promotion.
+Besides, we utilize Cohen's $d$ value to measure the improvement of our algorithms.
+Generally, $d>0.8$ indicates a large promotion, and $0.2<d<0.8$ indicates a middle promotion.
 In out experiments, OHT1 algorithm achieves large improvement on 39 tasks and middle improvement on 3 tasks.
 For OHT2 algorithms, the numbers are 35 and 2.
-Actually, $d$ is much larger than $0.8$ on most of tasks.
+And $d$ is much larger than $0.8$ on most of tasks.
 
 \subsection{Parameters and Running time}
 % parameter sensitivity
 \paragraph{Parameters}
 Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
-Therefor, we only investigate how different values of parameter K affect the classification accuracy of the algorithms.
-We select a number of tasks randomly to evaluate the parameter sensitivity.
-
+Consequently, we only investigate how different values of parameter K affect the classification accuracy of the algorithms.
 
 \begin{figure}[!htb]
-\begin{center}
+\centering
   \includegraphics[width=6cm]{average.pdf}
   \caption{Results under varying values of K}
   \label{average eok}
-\end{center}
 \end{figure}
 
-Average mistake rates over all 45 tasks under varying values of K.
-Figure \ref{average eok} shows the performance of the proposed algorithms with varied values of parameter K on task 1.
-We observe that the performance of the algorithms is stable, which validates the insensitivity of parameter K.
-Similar obvervations are obtained on other tasks.
-In consideration of that we employ the weighted K nearest neighbors strategy, it is easy to understand.
-The larger distance a instance in the heterogeneous source domain has, the less impact the instance makes.
+Figure \ref{average eok} shows the average mistake rates with varied values of parameter K over all 45 tasks.
+PA algorithm, whose performance is not related to the parameter $K$, provide a baseline rate of mistakes.
+We observe that the performance of the proposed methods consistently outperform PA algorithm, which indicates that nearest neighbors in heterogeneous source domain do provide valuable advice for the classification task.
 
 % running time
 \paragraph{Running time}
-Table shows the mean and standard deviation of running time of different algorithms on several randomly selected tasks.
 All of the algorithms were implemented in Matlab, and all experiments were run in a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
-From the table, we can see that PA without exploiting knowledge from the source domain is the most efficient.
-Two OHT algorithms are less efficient.
-The main reason of more running time is the searching process for the nearest neighbors.
-Because of the insensitivity of parameter $K$, we can simply make use of all instances in the heterogeneous source domain to decrease the running time and obtain comparable performance.
+The main reason of more running time for OHT algorithms is probably the searching process for the nearest neighbors.
+We can simply make use of all instances in the heterogeneous source domain to obtain generally comparable running time to PA, and at the same time, achieve better performance than PA.
 
 \section{Conclusion}
 
