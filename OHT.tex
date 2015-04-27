@@ -161,6 +161,9 @@ Combining the win/tie/loss results, we see that OHT1 is more stable than OHT2.
 \paragraph{Parameters}
 Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
 Consequently, we only investigate how different values of parameter $K$ affect the mistake rates of the algorithms.
+Figure \ref{average_error} shows the average mistake rates with varied values of parameter $K$ over all 45 tasks.
+PA algorithm, whose performance is not related to the parameter $K$, provide a baseline rate of mistakes.
+We observe that the performance of the proposed methods consistently outperform PA algorithm, which indicates that nearest neighbors in heterogeneous source domain do provide valuable advice for the classification task.
 
 \begin{figure}[!htb]
 \centering
@@ -174,20 +177,18 @@ Consequently, we only investigate how different values of parameter $K$ affect t
     \label{average_time}
     \includegraphics[width=3.9cm]{average_time.pdf}
   }
-  \caption{(a) The average rate of mistakes under varying values of $K$. (b) The average running time of different algorithms}
+  \caption{(a) The average rate of mistakes under varying values of $K$. (b) The average running time of different algorithms when all instances in heterogeneous source are considered.}
   \label{average eok}
 \end{figure}
-
-Figure \ref{average eok} shows the average mistake rates with varied values of parameter $K$ over all 45 tasks.
-PA algorithm, whose performance is not related to the parameter $K$, provide a baseline rate of mistakes.
-We observe that the performance of the proposed methods consistently outperform PA algorithm, which indicates that nearest neighbors in heterogeneous source domain do provide valuable advice for the classification task.
 
 % running time
 \paragraph{Running time}
 All of the algorithms were implemented in Matlab, and all experiments were run in a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
 Compared to PA algorithm without exploiting any information from the source domain, OHT algorithms are less efficient.
 The main reason of more running time for OHT algorithms is probably the searching process for the nearest neighbors.
-We can simply make use of all instances in the heterogeneous source domain to obtain generally comparable running time to PA, and at the same time, achieve better performance than PA.
+We can simply make use of all instances in the heterogeneous source domain to get rid of overhead for searching nearest neighbors.
+Figure \ref{average_time} shows the running time of different algorithms when all instances in the heterogeneous source domain are considered.
+We obtain generally comparable running time to PA, and at the same time, achieve better performance than PA.
 
 \section{Conclusion}
 
