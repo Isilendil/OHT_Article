@@ -165,7 +165,18 @@ Actually, $d$ is much larger than $0.8$ on most of tasks.
 Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
 Therefor, we only investigate how different values of parameter K affect the classification accuracy of the algorithms.
 We select a number of tasks randomly to evaluate the parameter sensitivity.
-Table shows the performance of the proposed algorithms with varied values of parameter K on task 1.
+
+
+\begin{figure}[!htb]
+\begin{center}
+  \includegraphics[width=6cm]{average.pdf}
+  \caption{Results under varying values of K}
+  \label{average eok}
+\end{center}
+\end{figure}
+
+Average mistake rates over all 45 tasks under varying values of K.
+Figure \ref{average eok} shows the performance of the proposed algorithms with varied values of parameter K on task 1.
 We observe that the performance of the algorithms is stable, which validates the insensitivity of parameter K.
 Similar obvervations are obtained on other tasks.
 In consideration of that we employ the weighted K nearest neighbors strategy, it is easy to understand.
