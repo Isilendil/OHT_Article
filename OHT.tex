@@ -8,6 +8,15 @@
 
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Initialize:}}
+%\newcommand{\vector}{\mathbf}
+\DeclareMathOperator{\sign}{sign}
 
 \frenchspacing
 \setlength{\pdfpagewidth}{8.5in}
@@ -39,7 +48,127 @@ AAAI creates proceedings, working notes, and technical reports directly from ele
 
 \section{Related Work}
 
-\section{Online Heterogeneous Transfer}
+\subsection{Transfer Learning}
+
+\subsection{Online Learning}
+
+\section{Problem Definition}
+
+Suppose that we are given some text instance $\{\mathbf{x}_{i}^{s}, y_{i}^{s}\}$ in the source data space $\mathcal{X}^{s} \times \mathcal{Y}^{s}$, where $\mathcal{X}^{s} = \mathbb{R}^{d^s}$ and $\mathcal{Y}^{s} = \{+1,-1\}$.
+The objective of online transfer learning is to learn a classifier $f(\mathbf{x}_{t})$ to classify image instance on a target domain in a online fasion.
+The data space of the target domain is $\mathcal{X} \times \mathcal{Y}$, where $\mathcal{X} = \mathbb{R}^{d}$ and $\mathcal{Y} = \{+1,-1\}$.
+Specifically, the task of online heterogeneous transfer learning is a sequential process, during which an image instance $\mathbf{x}_t$ comes at the $t$-th trial, and the classifier generates a predicted class label $\hat{y}_{t}$.
+Then the classifier receives the true class label $y_t$ and update itself to obtain better classification ability.
+
+In our problem setting, $\mathcal{Y} = \mathcal{Y}^{s}$, which means the same class label in two domains indicates the same class, for instance, $+1$ indicates vehicle and $-1$ indicates tree.
+However, the motivation of us is to conduct online image classification task by leveraging knowledge in text data.
+Formally, $\mathcal{X} \cap \mathcal{X}^{s} = \varnothing$.
+We cannot directly transfer information from a completely different source domain.
+Therefore, a sophistecated knowledge transfer method is proposed.
+
+\section{Methods}
+
+In this section, we describe the details of our proposed algorithms.
+We extend HomOTL algorithms, which exploit knowledge in a homogeneous source domain, to tackle the online heterogeneous transfer learning problem.
+We first introduce our approach of how to establish relationship between image data and auxiliary text data to build classifier using heterogeneous source data.
+Then we present online heterogeneous transfer learning algorithms.
+Finally, we analyze the theoretical bounds of the algorithms in a unified framework based on Hedge($\beta$) algorithm.
+
+\subsection{Heterogeneous Knowledge Transfer}
+
+\subsection{Algorithms}
+
+Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning stragety similar to HomOTL algorithms.
+
+We first construct a prediction function in the target domain using online learning algorithm PA, and then combine two hypotheses to get final classifier.
+According to the loss value suffered by each hypothesis seperately, we dynamically update two weights of both hypotheses.
+Without loss of generality, we use linear function in the target domain to simplify the description.
+Through the kernel trick, we are able to tackle the non-linear classification problem.
+
+Algorithm 1 presents the process of the proposed online heterogeneous transfer learning algorithm 1 (OHT1).
+$\theta_{1}^{s}$ and $\theta_1$ reflect the prior confidence we have on two hypotheses, and must sum to 1.
+If we have no preference on any of them, we can simply set $\theta_{1}^{s} = \theta^{t} = \frac{1}{2}$, which is also the setting we used in our experiments.
+Function $\varOmega(z) = \max \{ 0, \min \{ 1, \frac{z+1}{2} \}\}$ projects $z \in \mathbb{R}$ to range $[0,1]$.
+In order to adjust two weights dynamically, exponentially weighting update method cite is used.
+
+It is worthwhile to note that the equation in step 8, which calculate the updating factor of linear classifier trained on the target domain, can be replaced by two variants.
+In cite, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
+The corresponding equations of calculation of $\tau$ are $\tau_t = \min \{ C, \frac{\ell_t}{{\|\mathbf{x}_t\|}^2} \} $ and $ \tau_t = \frac{\ell_t}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $ respectively.
+Likewise, by replacing the equation in Step 8, we can obtain two variants OHT1-\uppercase\expandafter{\romannumeral1} and OHT1-\uppercase\expandafter{\romannumeral2}.
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\caption{Online Heterogeneous Transfer Algorithm 1 (OHT1)}
+\REQUIRE ~~
+aggressiveness parameter $C>0$\\ 
+%~~~~~~~~~discount parameter $\beta \in (0,1)$\\ 
+~~~~~~~~~heterogeneous source data
+\ENSURE ~~
+$\mathbf{v} = \mathbf{0}$, $\theta_{1}^{s} \in (0,1)$, $\theta_{1} \in (0,1)$
+\FOR{$t=1$ to $T$}
+\STATE 
+  receive instance: $\mathbf{x}_t \in \mathcal{X}$
+\STATE
+  normalize weights: $w_{t}^{s} = \frac{\theta_{t}^{s}}{\theta_{t}^{s}+\theta_t}, w_{t} = \frac{\theta_{t}}{\theta_{t}^{s}+\theta_t}$
+\STATE
+  predict: $\hat{y}_t = \sign \big( w_{t}^{s} \varOmega (h(\mathbf{x}_t)) + w_{t} \varOmega (\mathbf{v}_t \cdot \mathbf{x}_t) - \frac{1}{2} \big)$
+\STATE
+  receive correct label: $y_t \in \mathcal{Y}$
+\STATE
+  compute: 
+    $$\theta_{t+1}^{s} = \theta_{t+1}^{s} \exp \big\{ -\eta \big(\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)\big)^2 \big\} $$
+    $$\theta_{t+1} = \theta_{t+1} \exp \big\{ -\eta \big(\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)\big)^2 \big\} $$
+\STATE
+  suffer loss: $\ell_t = \max \{0, 1-y_t(\mathbf{v}_t \cdot \mathbf{x}_t)\}$
+\STATE
+  set: $\tau_t = \frac{\ell_t}{{\|\mathbf{x}_t\|}^2}$
+\STATE
+  update: $ \mathbf{v}_{t+1} = \mathbf{v}_t + \tau_t y_t \mathbf{x}_t $
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+Algorithm 2 summarizes the online heterogeneous transfer learning 2 (OHT2).
+OHT2 has a more polarized attitude to two hypotheses.
+Indication function $I(\cdot)$ represents whether the hypothesis makes a wrong prediction or not.
+The mistake made by a hypothesis will decrease its weight in the next trial.
+
+Similar to OHT1 algorithms, we also have two variants OHT2-\uppercase\expandafter{\romannumeral1} and OHT2-\uppercase\expandafter{\romannumeral2}.
+
+\begin{algorithm}
+\begin{algorithmic}[1]
+\caption{Online Heterogeneous Transfer Algorithm 2 (OHT2)}
+\REQUIRE ~~
+aggressiveness parameter $C>0$\\ 
+~~~~~~~~~discount parameter $\alpha \in (0,1)$\\ 
+~~~~~~~~~heterogeneous source data
+\ENSURE ~~
+$\mathbf{v} = \mathbf{0}$, $\theta_{1}^{s} \in (0,1)$, $\theta_{1} \in (0,1)$
+\FOR{$t=1$ to $T$}
+\STATE 
+  receive instance: $\mathbf{x}_t \in \mathcal{X}$
+\STATE
+  normalize weights: $w_{t}^{s} = \frac{\theta_{t}^{s}}{\theta_{t}^{s}+\theta_t}, w_{t} = \frac{\theta_{t}}{\theta_{t}^{s}+\theta_t}$
+\STATE
+  predict: $\hat{y}_t = \sign \big( w_{t}^{s} \sign (h(\mathbf{x}_t)) + w_{t} \sign (\mathbf{v}_t \cdot \mathbf{x}_t) \big)$
+\STATE
+  receive correct label: $y_t \in \mathcal{Y}$
+\STATE
+  compute: 
+    $$\theta_{t+1}^{s} = \theta_{t+1}^{s} \alpha ^ {I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)}  $$
+    $$\theta_{t+1} = \theta_{t+1} \alpha ^ {I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)}  $$
+\STATE
+  suffer loss: $\ell_t = \max \{0, 1-y_t(\mathbf{v}_t \cdot \mathbf{x}_t)\}$
+\STATE
+  set: $\tau_t = \frac{\ell_t}{{\|\mathbf{x}_t\|}^2}$
+\STATE
+  update: $ \mathbf{v}_{t+1} = \mathbf{v}_t + \tau_t y_t \mathbf{x}_t $
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+
+
+\subsection{Theoretical Analysis}
 
 \section{Experimental Results}
 
@@ -78,12 +207,12 @@ Sensitivity of parameters will be examined in subsequent sections.
 \subsection{Results and Discussion}
 \begin{figure*}[!htb]
 \centering
-  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs OHT1-\uppercase\expandafter{\romannumeral2}]
+  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT1-\uppercase\expandafter{\romannumeral2}]
   {
     \label{11}
     \includegraphics[width=18cm]{12_2.pdf}
   }
-  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs OHT2-\uppercase\expandafter{\romannumeral2}]
+  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT2-\uppercase\expandafter{\romannumeral2}]
   {
     \label{12}
     \includegraphics[width=18cm]{22_2.pdf}
