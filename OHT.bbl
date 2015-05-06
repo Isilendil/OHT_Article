@@ -1,0 +1,153 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Cesa-Bianchi and
+  Lugosi}{2006}]{cesa2006prediction}
+Cesa-Bianchi, N., and Lugosi, G.
+\newblock 2006.
+\newblock {\em Prediction, learning, and games}.
+\newblock Cambridge University Press.
+
+\bibitem[\protect\citeauthoryear{Crammer \bgroup et al\mbox.\egroup
+  }{2006}]{crammer2006online}
+Crammer, K.; Dekel, O.; Keshet, J.; Shalev-Shwartz, S.; and Singer, Y.
+\newblock 2006.
+\newblock Online passive-aggressive algorithms.
+\newblock {\em The Journal of Machine Learning Research} 7:551--585.
+
+\bibitem[\protect\citeauthoryear{Dai \bgroup et al\mbox.\egroup
+  }{2007a}]{dai2007transferring}
+Dai, W.; Xue, G.-R.; Yang, Q.; and Yu, Y.
+\newblock 2007a.
+\newblock Transferring naive bayes classifiers for text classification.
+\newblock In {\em PROCEEDINGS OF THE NATIONAL CONFERENCE ON ARTIFICIAL
+  INTELLIGENCE}, volume~22,  540.
+\newblock Menlo Park, CA; Cambridge, MA; London; AAAI Press; MIT Press; 1999.
+
+\bibitem[\protect\citeauthoryear{Dai \bgroup et al\mbox.\egroup
+  }{2007b}]{dai2007boosting}
+Dai, W.; Yang, Q.; Xue, G.-R.; and Yu, Y.
+\newblock 2007b.
+\newblock Boosting for transfer learning.
+\newblock In {\em Proceedings of the 24th international conference on Machine
+  learning},  193--200.
+\newblock ACM.
+
+\bibitem[\protect\citeauthoryear{Eaton and
+  desJardins}{2011}]{eaton2011selective}
+Eaton, E., and desJardins, M.
+\newblock 2011.
+\newblock Selective transfer between learning tasks using task-based boosting.
+\newblock In {\em AAAI}.
+
+\bibitem[\protect\citeauthoryear{Freund and
+  Schapire}{1995}]{freund1995decision}
+Freund, Y., and Schapire, R.~E.
+\newblock 1995.
+\newblock A desicion-theoretic generalization of on-line learning and an
+  application to boosting.
+\newblock In {\em Computational learning theory},  23--37.
+\newblock Springer.
+
+\bibitem[\protect\citeauthoryear{Liao, Xue, and Carin}{2005}]{liao2005logistic}
+Liao, X.; Xue, Y.; and Carin, L.
+\newblock 2005.
+\newblock Logistic regression with an auxiliary data source.
+\newblock In {\em Proceedings of the 22nd international conference on Machine
+  learning},  505--512.
+\newblock ACM.
+
+\bibitem[\protect\citeauthoryear{Ng, Wu, and Ye}{2012}]{ng2012co}
+Ng, M.~K.; Wu, Q.; and Ye, Y.
+\newblock 2012.
+\newblock Co-transfer learning via joint transition probability graph based
+  method.
+\newblock In {\em Proceedings of the 1st International Workshop on Cross Domain
+  Knowledge Discovery in Web and Social Network Mining},  1--9.
+\newblock ACM.
+
+\bibitem[\protect\citeauthoryear{Pan and Yang}{2010}]{pan2010survey}
+Pan, S.~J., and Yang, Q.
+\newblock 2010.
+\newblock A survey on transfer learning.
+\newblock {\em Knowledge and Data Engineering, IEEE Transactions on}
+  22(10):1345--1359.
+
+\bibitem[\protect\citeauthoryear{{Qingyao Wu}, Ng, and {Yunming
+  Ye}}{2014}]{wu2014co}
+{Qingyao Wu}; Ng, M.; and {Yunming Ye}.
+\newblock {2014}.
+\newblock {Cotransfer Learning Using Coupled Markov Chains with Restart}.
+\newblock {\em {IEEE Intelligent Systems}} {29}:{26--33}.
+
+\bibitem[\protect\citeauthoryear{Rosenblatt}{1958}]{rosenblatt1958perceptron}
+Rosenblatt, F.
+\newblock 1958.
+\newblock The perceptron: a probabilistic model for information storage and
+  organization in the brain.
+\newblock {\em Psychological review} 65(6):386.
+
+\bibitem[\protect\citeauthoryear{Tan \bgroup et al\mbox.\egroup
+  }{2014}]{tan2014mixed}
+Tan, B.; Zhong, E.; Ng, M.; and Yang, Q.
+\newblock 2014.
+\newblock Mixed-transfer: transfer learning over mixed graphs.
+\newblock In {\em Proceedings of SIAM International Conference on Data Mining}.
+
+\bibitem[\protect\citeauthoryear{Wang, Hoiem, and
+  Forsyth}{2009}]{wang2009building}
+Wang, G.; Hoiem, D.; and Forsyth, D.
+\newblock 2009.
+\newblock Building text features for object image classification.
+\newblock In {\em Computer Vision and Pattern Recognition, 2009. CVPR 2009.
+  IEEE Conference on},  1367--1374.
+\newblock IEEE.
+
+\bibitem[\protect\citeauthoryear{Wei and Pal}{2011}]{wei2011heterogeneous}
+Wei, B., and Pal, C.~J.
+\newblock 2011.
+\newblock Heterogeneous transfer learning with rbms.
+\newblock In {\em AAAI}.
+
+\bibitem[\protect\citeauthoryear{Yang \bgroup et al\mbox.\egroup
+  }{2009}]{yang2009heterogeneous}
+Yang, Q.; Chen, Y.; Xue, G.-R.; Dai, W.; and Yu, Y.
+\newblock 2009.
+\newblock Heterogeneous transfer learning for image clustering via the social
+  web.
+\newblock In {\em Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP: Volume 1-Volume 1},  1--9.
+\newblock Association for Computational Linguistics.
+
+\bibitem[\protect\citeauthoryear{Zhao and Hoi}{2010}]{zhao2010otl}
+Zhao, P., and Hoi, S.~C.
+\newblock 2010.
+\newblock Otl: A framework of online transfer learning.
+\newblock In {\em Proceedings of the 27th International Conference on Machine
+  Learning (ICML-10)},  1231--1238.
+
+\bibitem[\protect\citeauthoryear{Zhao \bgroup et al\mbox.\egroup
+  }{2014}]{zhao2014online}
+Zhao, P.; Hoi, S.~C.; Wang, J.; and Li, B.
+\newblock 2014.
+\newblock Online transfer learning.
+\newblock {\em Artificial Intelligence} 216:76--102.
+
+\bibitem[\protect\citeauthoryear{Zhou \bgroup et al\mbox.\egroup
+  }{2014}]{zhou2014hybrid}
+Zhou, J.~T.; Pan, S.~J.; Tsang, I.~W.; and Yan, Y.
+\newblock 2014.
+\newblock Hybrid heterogeneous transfer learning through deep learning.
+\newblock In {\em 28th AAAI Conference on Artificial Intelligence, AAAI 2014,
+  26th Innovative Applications of Artificial Intelligence Conference, IAAI 2014
+  and the 5th Symposium on Educational Advances in Artificial Intelligence,
+  EAAI 2014}, volume~3,  2213--2219.
+
+\bibitem[\protect\citeauthoryear{Zhu \bgroup et al\mbox.\egroup
+  }{2011}]{zhu2011heterogeneous}
+Zhu, Y.; Chen, Y.; Lu, Z.; Pan, S.~J.; Xue, G.-R.; Yu, Y.; and Yang, Q.
+\newblock 2011.
+\newblock Heterogeneous transfer learning for image classification.
+\newblock In {\em AAAI}.
+
+\end{thebibliography}

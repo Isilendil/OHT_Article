@@ -1,0 +1,49 @@
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: OHT.aux
+The style file: aaai.bst
+Database file #1: transferlearning.bib
+Database file #2: onlinelearning.bib
+Warning--can't use both volume and number fields in dai2007transferring
+You've used 19 entries,
+            2568 wiz_defined-function locations,
+            690 strings with 8369 characters,
+and the built_in function-call counts, 8881 in all, are:
+= -- 953
+> -- 366
+< -- 11
++ -- 128
+- -- 124
+* -- 673
+:= -- 1388
+add.period$ -- 102
+call.type$ -- 19
+change.case$ -- 137
+chr.to.int$ -- 18
+cite$ -- 20
+duplicate$ -- 367
+empty$ -- 638
+format.name$ -- 157
+if$ -- 1898
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 124
+num.names$ -- 57
+pop$ -- 133
+preamble$ -- 1
+purify$ -- 157
+quote$ -- 0
+skip$ -- 287
+stack$ -- 0
+substring$ -- 452
+swap$ -- 116
+text.length$ -- 11
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 148
+warning$ -- 1
+while$ -- 71
+width$ -- 23
+write$ -- 279
+(There was 1 warning)

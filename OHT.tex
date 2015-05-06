@@ -67,9 +67,9 @@ Encouraging results demonstrate the effectiveness of our algorithms.
 
 \section{Introduction}
 
-Transfer learning, which devotes to transferring knowledge extracted from the source domain to the target domain, has been actively studied in recent years.
+Transfer learning \cite{pan2010survey}, which devotes to transferring knowledge extracted from the source domain to the target domain, has been actively studied in recent years.
 According to the relationship between the source and target domains, we can categorize transfer learning into two groups: homogeneous transfer and heterogeneous transfer.
-A great number of works in the last decade successfully deal with homogeneous transfer learning problem, which assumes that the data spaces of the source and target domains are the same.
+A great number of works in the last decade successfully deal with homogeneous transfer learning problem \cite{liao2005logistic,dai2007boosting,dai2007transferring,eaton2011selective}, which assumes that the data spaces of the source and target domains are the same.
 Nevertheless, more and more studies consider heterogeneous transfer learning problem.
 Heterogeneous transfer considers the situation that either the feature spaces or the output spaces of the source and target domains are different.
 
@@ -95,37 +95,37 @@ Empirical results show that our algorithms outperform the baseline methods.
 
 \section{Related Work}
 
-The topics that our work is related to are traditional transfer learning, heterogeneous transfer learning and online learning.
-In this section, we review some related works.
-
-\subsection{Traditional Transfer Learning}
-The objective of traditional transfer learning is to solve a problem in the target domain by leveraging knowledge extracted from some source domains.
-The task in the target domain includes classification, regression, clustering, recommendation and so forth.
-Two of the most frequently used strategies are instance transfer and feature transfer.
-Instance transfer repeatly increases the weight of the "good" instances in the source domain, and decreases the weight of the "bad" ones.
-Feature transfer usually constructs common feature representation of different domains.
+The topics that our work is related to are heterogeneous transfer learning and online learning.
+In this section, we review some related works and address the differences between our work and the existing works.
 
 \subsection{Heterogeneous Transfer Learning}
-According to the relationship among data space of different domains, we can categorize transfer learning into two groups: homogeneous transfer and heterogeneous transfer.
-Homogeneous transfer considers a problem that the data spaces of source and target domains are the same.
-While heterogeneous transfer solve the problem that the data spaces of source and target domains are different.
-cite proposed a algorithm to utilize data with different output space.
-cite leveraged text data for image clustering, yet cite utilized text data for image classification task.
-cite proposed a algorithm to build two separate classifiers based on text features and image features, respectively.
-And then the final classifier are trained to combine them.
-cite constructs transition probabilities based on co-occurrence information among instances from different domains, and applied random walker method to deal with classification task.
+The objective of heterogeneous transfer learning is to solve a problem in the target domain by leveraging knowledge extracted from other heterogeneous source domains with different feature space.
+\cite{wei2011heterogeneous} applied restricted Boltzmann machine to perform heterogeneous transfer learning task.
+And depp learning technique is introduced into heterogeneous transfer problem in \cite{zhou2014hybrid}.
+There are also some existing works studying heterogeneous transfer learning problem using co-occurrence data.
+\cite{yang2009heterogeneous} leverage text data for image clustering, and \cite{zhu2011heterogeneous} utilize text data for image classification task.
+\cite{wang2009building} proposed a algorithm to build two separate classifiers based on text features and image features, and then the final classifier are trained to combine them.
+And \cite{ng2012co,wu2014co,tan2014mixed} constructs transition probabilities based on co-occurrence information among instances from different domains, and applied random walker method to deal with classification task.
+
+However, above-mentioned studies require training data in the source and target domains.
+\cite{zhu2011heterogeneous} utilize training data to learn high-level features which help to construct extra representation for target images.
+And the transition probabilities matrix used in \cite{ng2012co,wu2014co} also need prior training data in the source as well as target domains.
+Since all the data instance in the target domain arrive sequentially, we do not have enough data for training process.
+To deal with this problem, we establish a relationship based on the similarity between the instance in the target domain and the heterogeneous data without a batch training procedure.
 
 \subsection{Online Learning}
 
 Online learning has been actively studied for years.
 Compared to the off-line machine learning problem that training data are given first, online learning learner receives data instances sequentially.
 An online learning learner make a prediction immediately and adjust itself during the process of task.
-One of the classic algorithms of online learning is Perceptron algorithm, which move the decision bound towards the direction of an instance which is labeled wrong.
-Passive-Aggressive algorithm and its variants take the criterion of maximum margin into account.
+One of the classic algorithms of online learning is Perceptron algorithm \cite{rosenblatt1958perceptron}, which move the decision bound towards the direction of an instance which is labeled wrong.
+Passive-Aggressive algorithm and its variants take the criterion of maximum margin into account \cite{crammer2006online}.
 
-However, few works address transfer learning in an online fasion.
-cite investigated online transfer learning, which aims to solve an online learning problem in the target domain using training data in the source domain.
-cite adopt an ensemble strategy to deal with the homogeneous transfer learning problem, and a co-regularization principle is used to handle the heterogeneous transfer learning problem.
+However, only a few works address transfer learning in an online fasion.
+\cite{zhao2010otl,zhao2014online} adopt an ensemble strategy to deal with the homogeneous transfer learning problem, and a co-regularization principle is used to handle the heterogeneous transfer learning problem.
+Nevertheless, the multi-view approach for online heterogeneous transfer in \cite{zhao2010otl,zhao2014online} assume that the feature space of the source domain is a subset of that of the target domain.
+Instead, we consider a situation that the feature spaces of the source and target domains do not share any common subset.
+Co-occurrence data are used to help us transfer knowledge learnt from the heterogeneous source domain.
 
 \section{Problem Definition}
 
@@ -150,13 +150,15 @@ Then we present online heterogeneous transfer learning algorithms.
 
 \subsection{Heterogeneous Knowledge Transfer}
 
-In order to transfer knowledge in the heterogneous source to the target domain, we construct connection between two domains, and then design a hypothesis to predict class label of the instance in the target domain.
+In order to transfer knowledge in the heterogneous source to the target domain, we construct a connection between two domains, and then design a hypothesis to predict class label of the instance in the target domain.
 
 Our idea is to bridge two domains via their co-occurrence information.
 Given some co-occurrence data instances $\{ \mathbf{x}_{i}^{o} \}$ in the data space $\mathcal{X}^o$, which can be split into two part $\mathcal{X}^{(1)}$ and $\mathcal{X}^{(2)}$.
 Then we have $ \mathbf{x}_{i}^{o} = (\mathbf{x}_{i}^{(1)}, \mathbf{x}_{i}^{(2)}) $.
 The first part of the feature space of co-occurrence data is the same as the feature space of the target domain, and the second part is the same as the feature space of the source domain.
 More specifically, we have $\mathcal{X}^{(1)} = \mathcal{X}$, and $\mathcal{X}^{(2)} = \mathcal{X}^s$.
+
+It is convenience to collect co-occurrence data from the Internet.
 For example, tagged images from Flickr can be used as the co-occurrence data between image data space and text data space.
 When $\mathcal{X}$ is the feature space of English document and $\mathcal{X}^s$ is the feature space of Chinese document, the co-occurrence data can be collected from Wikipedia webpages titled by corresponding term.
 Figure illustrates the relationship among two domains and the co-occurrence data.
@@ -173,8 +175,8 @@ Finally, we obtain a similarity vector $Sim_t$ between $\mathbf{x}_t$ and each i
 $$ Sim_t(j) = \sum\limits_i Sim_{t}^{(1)}(i) Sim^{(2)}(i,j) $$
 
 Based on $Sim_t$, we predict the class label of instance $\mathbf{x}_t$ by weighted $K$ nearest neighbor classifier:
-$$ h_{t}^{s}(\mathbf{x}_t) = \sum\limits_{\mathbf{x}_i \in N} \frac{Sim_t(i)}{\sum\limits_{\mathbf{x}_t \in N} Sim_t(i)} y_i $$
-where $N$ is the set consisting of $K$ nearest neighbors in the heterogeneous source domain.
+$$ h_{t}^{s}(\mathbf{x}_t) = \sum\limits_{i \in N} \frac{Sim_t(i)}{\sum\limits_{i \in N} Sim_t(i)} y_i $$
+where $N$ is the set of identifiers of $K$ nearest neighbors in the heterogeneous source domain.
 
 \subsection{Online Heterogeneous Transfer Algorithms}
 
@@ -189,10 +191,10 @@ Algorithm 1 presents the process of the proposed online heterogeneous transfer l
 $w_{1}^{s}$ and $w_1$ reflect the prior confidence we have on two hypotheses, and must sum to 1.
 If we have no preference on any of them, we can simply set $w_{1}^{s} = w_{t} = \frac{1}{2}$, which is also the setting we used in our experiments.
 Function $\varOmega(z) = \max \{ 0, \min \{ 1, \frac{z+1}{2} \}\}$ projects $z \in \mathbb{R}$ to range $[0,1]$.
-In order to adjust two weights dynamically, exponentially weighting update method cite is used.
+In order to adjust two weights dynamically, exponentially weighting update method \cite{cesa2006prediction} is used.
 
 It is worthwhile to note that the equation in step 8, which calculate the updating factor of linear classifier trained on the target domain, can be replaced by two variants.
-In cite, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
+In \cite{crammer2006online}, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
 The corresponding equations of calculation of $\tau$ are $\tau_t = \min \{ C, \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2} \} $ and $ \tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $ respectively.
 Likewise, by replacing the equation in Step 8, we can obtain two variants OHT1-\uppercase\expandafter{\romannumeral1} and OHT1-\uppercase\expandafter{\romannumeral2}.
 
@@ -309,7 +311,7 @@ $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=
 %\end{equation*}
 \end{prop}
 
-The technique of the proof can be found in cite.
+The technique of the proof can be found in \cite{freund1995decision}.
 \begin{rem}
 The physical meaning of the Proposition 1 is that the entire loss value, which sums up the combined loss at every trial, is not much larger than the loss value maded by the better hypothesis.
 At the right side of the inequation, $\ln(\frac{1}{w_{1}^{s}})$ and $\ln(\frac{1}{w_1})$ measure the prior confidence we have on two hypotheses.
@@ -427,12 +429,10 @@ In order to obtain stable results, we draw 100 times of random permutation of th
 
 \subsection{Baseline Methods}
 We compare the proposed methods with Passive-Aggressive online learning algorithms.
-PA algorithm proposed by Crammer et al. does not exploit knowledge from the source domain.
+PA algorithms proposed in \cite{crammer2006online} does not exploit knowledge from the source domain.
 It deals with the traditional online learning problem in the target domain.
-In addition, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
-Likewise, we have three versions of tow OHT algorithms (OHT$i$, OHT$i$-\uppercase\expandafter{\romannumeral1} and OHT$i$-\uppercase\expandafter{\romannumeral2}, where $i=\{1,2\}$) respectively based on PA algorithm and its variations.
-We conduct three sets of experiments considering three versions separately.
-Each set of experiments compares two OHT methods against a Passive-Aggressive algorithm.
+As each of PA and OHT algorithms have three versions, we conduct three sets of experiments separately.
+Each set of experiments compares two OHT methods against the Passive-Aggressive algorithm which our methods based on.
 
 For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks.
 The kernel parameter $\sigma = 8$ for the target domain.
@@ -564,6 +564,6 @@ Experimental results show that the proposed algorithms significantlly outperform
 In the future, we will consider the application with other types of data, or the scenario which includes more than one source domains.
 
 \bibliographystyle{aaai}
-\bibliography{transferlearning, onlinelearning}
+\bibliography{transferlearning,onlinelearning}
 
 \end{document}
