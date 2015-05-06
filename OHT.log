@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.5)  30 APR 2015 16:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.10.5)  6 MAY 2015 16:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -182,38 +182,55 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 \ALC@tlm=\skip53
 \algorithmicindent=\skip54
 )
-(./OHT.aux)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2004/08/06 v2.20
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
+\dth@everypar=\toks29
+)
+\c@lem=\count110
+\c@thm=\count111
+\c@prop=\count112
+\c@defn=\count113
+ (./OHT.aux)
 \openout1 = `OHT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
-LaTeX Font Info:    ... okay on input line 30.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 30.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 39.
+
+(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count110
+\scratchcounter=\count114
 \scratchdimen=\dimen116
 \scratchbox=\box30
-\nofMPsegments=\count111
-\nofMParguments=\count112
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count113
+\nofMPsegments=\count115
+\nofMParguments=\count116
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count117
 \MPscratchDim=\dimen117
-\MPnumerator=\count114
-\makeMPintoPDFobject=\count115
-\everyMPtoPDFconversion=\toks25
+\MPnumerator=\count118
+\makeMPintoPDFobject=\count119
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -263,138 +280,152 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for U+msa on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 39.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 39.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 48.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 48.
 
 (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 39.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 40.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 49.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 51.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
  [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
-]
-<12_2.pdf, id=20, 1154.3125pt x 263.98625pt>
+] [2] [3]
+Overfull \hbox (2.1213pt too wide) in paragraph at lines 365--365
+[] 
+ []
+
+[4] <12_2.pdf, id=35, 1154.3125pt x 263.98625pt>
 File: 12_2.pdf Graphic file (type pdf)
  <use 12_2.pdf>
-Package pdftex.def Info: 12_2.pdf used on input line 214.
+Package pdftex.def Info: 12_2.pdf used on input line 450.
 (pdftex.def)             Requested size: 512.1496pt x 117.1291pt.
 
-<22_2.pdf, id=21, 1154.3125pt x 261.97874pt>
+<22_2.pdf, id=36, 1154.3125pt x 261.97874pt>
 File: 22_2.pdf Graphic file (type pdf)
  <use 22_2.pdf>
-Package pdftex.def Info: 22_2.pdf used on input line 219.
+Package pdftex.def Info: 22_2.pdf used on input line 455.
 (pdftex.def)             Requested size: 512.1496pt x 116.23839pt.
 
-Overfull \hbox (11.2596pt too wide) in paragraph at lines 214--220
+Overfull \hbox (11.2596pt too wide) in paragraph at lines 450--456
  [][] 
  []
 
 
-Overfull \hbox (11.2596pt too wide) in paragraph at lines 214--220
+Overfull \hbox (11.2596pt too wide) in paragraph at lines 450--456
  [] 
  []
 
-<task2_2.pdf, id=22, 421.575pt x 316.18124pt>
+<task2_2.pdf, id=37, 421.575pt x 316.18124pt>
 File: task2_2.pdf Graphic file (type pdf)
  <use task2_2.pdf>
-Package pdftex.def Info: task2_2.pdf used on input line 238.
+Package pdftex.def Info: task2_2.pdf used on input line 474.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task14_2.pdf, id=23, 421.575pt x 316.18124pt>
+<task14_2.pdf, id=38, 421.575pt x 316.18124pt>
 File: task14_2.pdf Graphic file (type pdf)
  <use task14_2.pdf>
-Package pdftex.def Info: task14_2.pdf used on input line 243.
+Package pdftex.def Info: task14_2.pdf used on input line 479.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task36_2.pdf, id=24, 421.575pt x 316.18124pt>
+<task36_2.pdf, id=39, 421.575pt x 316.18124pt>
 File: task36_2.pdf Graphic file (type pdf)
  <use task36_2.pdf>
-Package pdftex.def Info: task36_2.pdf used on input line 248.
+Package pdftex.def Info: task36_2.pdf used on input line 484.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task7_2.pdf, id=25, 421.575pt x 316.18124pt>
+<task7_2.pdf, id=40, 421.575pt x 316.18124pt>
 File: task7_2.pdf Graphic file (type pdf)
  <use task7_2.pdf>
-Package pdftex.def Info: task7_2.pdf used on input line 254.
+Package pdftex.def Info: task7_2.pdf used on input line 490.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task16_2.pdf, id=26, 421.575pt x 316.18124pt>
+<task16_2.pdf, id=41, 421.575pt x 316.18124pt>
 File: task16_2.pdf Graphic file (type pdf)
  <use task16_2.pdf>
-Package pdftex.def Info: task16_2.pdf used on input line 259.
+Package pdftex.def Info: task16_2.pdf used on input line 495.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
 
-<task33_2.pdf, id=27, 421.575pt x 316.18124pt>
+<task33_2.pdf, id=42, 421.575pt x 316.18124pt>
 File: task33_2.pdf Graphic file (type pdf)
  <use task33_2.pdf>
-Package pdftex.def Info: task33_2.pdf used on input line 264.
+Package pdftex.def Info: task33_2.pdf used on input line 500.
 (pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
- [2]
+ [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./12_2.pdf> <./22_2.pdf> <./task2_2.pdf> <./task14_2.pdf> <./task36_2.pdf>
- <./task7_2.pdf> <./task16_2.pdf> <./task33_2.pdf>]
-<average_error.pdf, id=75, 451.6875pt x 339.2675pt>
+
+<average_error.pdf, id=46, 451.6875pt x 339.2675pt>
 File: average_error.pdf Graphic file (type pdf)
  <use average_error.pdf>
-Package pdftex.def Info: average_error.pdf used on input line 303.
+Package pdftex.def Info: average_error.pdf used on input line 539.
 (pdftex.def)             Requested size: 110.96556pt x 83.34645pt.
 
-<average_time.pdf, id=76, 459.7175pt x 340.27126pt>
+<average_time.pdf, id=47, 459.7175pt x 340.27126pt>
 File: average_time.pdf Graphic file (type pdf)
  <use average_time.pdf>
-Package pdftex.def Info: average_time.pdf used on input line 308.
+Package pdftex.def Info: average_time.pdf used on input line 544.
 (pdftex.def)             Requested size: 110.96556pt x 82.13405pt.
 
-[4 <./average_error.pdf> <./average_time.pdf>] (./OHT.aux) ) 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./12_2.pdf> <./22_2.pdf> <./task2_2.pdf> <./task14_2.pdf> <./task36_2.pdf>
+ <./task7_2.pdf> <./task16_2.pdf> <./task33_2.pdf>]
+No file OHT.bbl.
+[7
+
+ <./average_error.pdf> <./average_time.pdf>] (./OHT.aux) ) 
 Here is how much of TeX's memory you used:
- 2987 strings out of 493117
- 39920 string characters out of 6135433
- 113415 words of memory out of 5000000
- 6376 multiletter control sequences out of 15000+600000
- 17716 words of font info for 41 fonts, out of 8000000 for 9000
+ 3107 strings out of 493117
+ 41159 string characters out of 6135433
+ 115791 words of memory out of 5000000
+ 6481 multiletter control sequences out of 15000+600000
+ 22867 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,26p,342b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive
-/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2014/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msbm10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr
-8a.pfb>
-Output written on OHT.pdf (4 pages, 204085 bytes).
+ 38i,19n,26p,342b,389s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2
+014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2014/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2014/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2014/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2014/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2014/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2014/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy5.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/sym
+bols/msbm10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
+r/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on OHT.pdf (7 pages, 271752 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 96 compressed objects within 1 object stream
+ 170 PDF objects out of 1000 (max. 8388607)
+ 119 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 
