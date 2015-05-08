@@ -1,0 +1,62 @@
+% \usepackage[usenames,dvipsnames]{pstricks}
+% \usepackage{epsfig}
+% \usepackage{pst-grad} % For gradients
+% \usepackage{pst-plot} % For axes
+% User Packages:
+% 
+% 
+\psscalebox{1.0 1.0} % Change this value to rescale the drawing.
+{
+\begin{pspicture}(0,-6.6953125)(21.854206,6.6953125)
+\definecolor{colour0}{rgb}{0.003921569,0.003921569,0.003921569}
+\rput[bl](9.4,4.5046873){$(\mathbf{x}_t$}
+\rput[bl](15.4,4.5046873){$(\mathbf{x}_{t-1}, y_{t-1})$}
+\rput[bl](3.0,4.5046873){$(\mathbf{x}_{t+1}, y_{t+1})$}
+\psdots[linecolor=black, dotsize=0.11](21.0,4.6246877)
+\psdots[linecolor=black, dotsize=0.11](21.4,4.6246877)
+\psdots[linecolor=black, dotsize=0.11](21.8,4.6246877)
+\psdots[linecolor=black, dotsize=0.11](1.0,4.6246877)
+\psdots[linecolor=black, dotsize=0.11](1.4,4.6246877)
+\psdots[linecolor=black, dotsize=0.11](1.8,4.6246877)
+\psline[linecolor=colour0, linewidth=0.04, fillstyle=hlines, hatchwidth=0.028222222, hatchangle=0.0, hatchsep=0.1411111, doubleline=true, doublesep=0.12, arrowsize=0.3cm 1.0,arrowlength=1.0,arrowinset=2.0]{->}(6.42,6.1046877)(14.6,6.1046877)(14.6,6.1046877)
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](10.92,1.9646875)(8.92,-0.4353125)
+\rput[bl](9.24,1.3046875){Classifier}
+\rput[bl](9.72,0.8246875){in}
+\rput[bl](9.38,0.4246875){Target}
+\rput[bl](9.3,-0.0553125){Domain}
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](8.06,1.9646875)(6.06,-0.4353125)
+\rput[bl](6.38,1.3046875){Classifier}
+\rput[bl](6.86,0.8246875){in}
+\rput[bl](6.52,0.4246875){Source}
+\rput[bl](6.44,-0.0553125){Domain}
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](9.46,-2.2953124)(7.46,-3.9353125)
+\rput[bl](7.72,-3.5153124){Classifier}
+\rput[bl](7.64,-2.9753125){Combined}
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](3.4146836,1.0446875)(2.64,0.14171721)
+\psframe[linecolor=black, linewidth=0.04, fillstyle=solid, dimen=outer](3.5508862,0.91181624)(2.7762024,0.008845916)
+\psframe[linecolor=black, linewidth=0.04, fillstyle=solid, dimen=outer](3.68,0.7876578)(2.9053164,-0.1153125)
+\rput[bl](0.0,0.4846875){Heterogeneous}
+\rput[bl](0.64,0.8446875){Data in}
+\rput[bl](0.7,0.1046875){Source}
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](11.8,2.5046875)(5.4,-5.0953126)
+\psframe[linecolor=black, linewidth=0.04, dimen=outer](14.2,2.9046874)(5.0,-6.6953125)
+\pscircle[linecolor=black, linewidth=0.04, dimen=outer](13.16,-6.0153127){0.5}
+\rput[bl](7.64,-6.2553124){$\hat{y}_t$}
+\rput[bl](12.74,4.5246873){$y_t)$}
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(13.22,3.9846876)(13.2,-5.2153125)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(10.28,4.3246875)(8.72,3.0446875)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(8.56,2.8646874)(7.24,2.0646875)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(8.7,2.8446875)(9.82,2.1046875)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(7.0,-0.5153125)(8.22,-2.0553124)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(9.94,-0.5753125)(8.58,-2.0553124)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(8.38,-4.2153125)(8.38,-5.6753125)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(9.48,-6.1353126)(12.38,-6.1353126)
+\psline[linecolor=black, linewidth=0.04, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(3.84,0.4646875)(5.68,0.4646875)
+\psline[linecolor=black, linewidth=0.04, linestyle=dashed, dash=0.17638889cm 0.10583334cm](12.3,-5.8553123)(9.84,-5.8353124)
+\psline[linecolor=black, linewidth=0.04, linestyle=dashed, dash=0.17638889cm 0.10583334cm, arrowsize=0.3cm 1.0,arrowlength=0.5,arrowinset=2.0]{->}(9.86,-5.8153124)(9.86,-5.3353124)
+\rput[bl](5.54,-4.8753123){Classifier}
+\rput[bl](5.14,-6.5153127){Learner}
+\rput[bl](9.54,6.4446874){Data Sequence}
+\end{pspicture}
+}
+
