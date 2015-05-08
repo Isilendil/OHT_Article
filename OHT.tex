@@ -49,14 +49,14 @@
 \begin{abstract}
 %\begin{quote}
 Heterogeneous transfer learning aims to build the model in the target domain by leveraging knowledge extracted from other heterogeneous source domains.
-In this paper, we investigate online heterogeneous transfer learning problem, which considers a classification on the target domain in an online fasion.
+In this paper, we investigate online heterogeneous transfer learning problem, which considers a classification task on the target domain in an online fashion.
 The motivation of our work is to utilize data in the heterogeneous source domain to promote the ability of classifier.
 The challenges in online heterogeneous transfer learning mainly come from two aspects.
 The first one is that the feature spaces of the source and target domains are completely different, which leads to the difficulty for knowledge transfer.
 The second one is that we do not have enough prior training data from the target domain to build a precise relationship across the source and target domains.
-With regard to aforementioned problems, we propose effective algorithms based on ensemble strategy.
-We first construct a connection between the source and target domains using co-occurrence data, and then build a weighted $K$ nearest neighbor classifier based on the heterogeneous data.
-Combining with the hypothesis trained on the target domain, we obtain the final classifier.
+With regard to aforementioned problems, we propose effective algorithms based on the ensemble strategy.
+We first construct a connection between the source and target domains using co-occurrence data, and then build a weighted $K$ nearest neighbor classifier using heterogeneous data.
+Combining with the hypothesis trained in the target domain, we obtain the final classifier.
 We also theoretically analyze the mistake bound of our proposed algorithms under the $\mathbf{Hedge(\beta)}$ framework.
 The experiments are conducted for image classification by exploiting the knowledge learnt from the text data.
 Encouraging results demonstrate the effectiveness of our algorithms.
@@ -68,107 +68,106 @@ Encouraging results demonstrate the effectiveness of our algorithms.
 \section{Introduction}
 
 Transfer learning \cite{pan2010survey}, which devotes to transferring knowledge extracted from the source domain to the target domain, has been actively studied in recent years.
-According to the relationship between the source and target domains, we can categorize transfer learning into two groups: homogeneous transfer and heterogeneous transfer.
-A great number of works in the last decade successfully deal with homogeneous transfer learning problem \cite{liao2005logistic,dai2007boosting,dai2007transferring,eaton2011selective}, which assumes that the data spaces of the source and target domains are the same.
+According to the relationship between the feature spaces of the source and target domains, we can categorize transfer learning into two groups: homogeneous transfer and heterogeneous transfer.
+A great number of works in the last decade successfully deal with homogeneous transfer learning problem \cite{liao2005logistic,dai2007boosting,dai2007transferring,eaton2011selective}, which assumes that the data spaces of the source and target domains are identical.
 Nevertheless, more and more studies consider heterogeneous transfer learning problem.
-Heterogeneous transfer considers the situation that either the feature spaces or the output spaces of the source and target domains are different.
+Heterogeneous transfer addresses the situation that either the feature spaces or the output spaces of the source and target domains are different.
 
 Most works regarding heterogeneous transfer address an offline learning problem.
-In this paper, we investigate online heterogeneous transfer learning problem, whose test data instances arrive sequentially.
+In this paper, we investigate online heterogeneous transfer learning problem where test data instances arrive sequentially.
 Our motivation is to achieve better performance on a classification task in the target domain using knowledge learnt from the data in the heterogeneous source domain.
 There are two principal challenges in online heterogeneous transfer problem.
-The first one is the fact that feature spaces of the source and target domains are completely different, which makes it difficult to construct relationship across domains.
+The first one is the fact that the feature spaces of the source and target domains are completely different, which makes it difficult to construct relationship across domains.
 The second one comes from the characteristic of online learning problem.
 As the data instances arrive in an sequential manner, we do not have enough training data from the target domain in advance.
 Thus, we cannot adopt a training method to build precise relasionship between the source and target domains.
 
-In order to solve aforementioned problems, we propose \textbf{O}nline \textbf{H}eterogeneous \textbf{T}ransfer (OHT) algorithms based on $\mathbf{Hedge(\beta)}$ framework.
+In order to solve aforementioned problems, we propose \textbf{O}nline \textbf{H}eterogeneous \textbf{T}ransfer (OHT) algorithms based on the ensemble strategy.
 Firstly, by calculating the similarity between the test instance and the heterogeneous data instance using co-occurrence data, we construct a connection across the domains.
 Next, we adopt weighted $K$ nearest neighbor algorithm to obtain hypothesis in the heterogeneous source domain.
 At the same time, a traditional online learning algorithm is applied in the target domain to produce another hypothesis.
-Combining two hypotheses based on $\mathbf{Hedge(\beta)}$ framework, we get the final classifier.
+By combining two hypotheses, we get the final classifier.
 We also analyze the theoretical bound of our proposed algorithms.
 
 The experiments are conducted for image classification by taking advantage of knowledge in the text data.
 We make use of NUS-WIDE dataset to generate binary classification tasks.
-Empirical results show that our algorithms outperform the baseline methods.
+Experimental results show that our algorithms outperform the baseline methods.
 
 \section{Related Work}
 
 The topics that our work is related to are heterogeneous transfer learning and online learning.
-In this section, we review some related works and address the differences between our work and the existing works.
+In this section, we review some related works and discuss the differences between our work and the existing works.
 
 \subsection{Heterogeneous Transfer Learning}
 The objective of heterogeneous transfer learning is to solve a problem in the target domain by leveraging knowledge extracted from other heterogeneous source domains with different feature space.
-\cite{wei2011heterogeneous} applied restricted Boltzmann machine to perform heterogeneous transfer learning task.
-And depp learning technique is introduced into heterogeneous transfer problem in \cite{zhou2014hybrid}.
-There are also some existing works studying heterogeneous transfer learning problem using co-occurrence data.
+\cite{wei2011heterogeneous} applies restricted Boltzmann machine to perform heterogeneous transfer learning task.
+And deep learning technique is introduced into heterogeneous transfer in \cite{zhou2014hybrid}.
+There are also some existing works studying heterogeneous transfer using co-occurrence data.
 \cite{yang2009heterogeneous} leverage text data for image clustering, and \cite{zhu2011heterogeneous} utilize text data for image classification task.
-\cite{wang2009building} proposed a algorithm to build two separate classifiers based on text features and image features, and then the final classifier are trained to combine them.
-And \cite{ng2012co,wu2014co,tan2014mixed} constructs transition probabilities based on co-occurrence information among instances from different domains, and applied random walker method to deal with classification task.
+\cite{wang2009building} proposed a algorithm to build two separate classifiers based on text features and image features, and then the final classifier is trained to combine them.
+And \cite{ng2012co,wu2014co,tan2014mixed} constructs transition probabilities based on co-occurrence information, and apply random walker method to deal with classification task.
 
 However, above-mentioned studies require training data in the source and target domains.
 \cite{zhu2011heterogeneous} utilize training data to learn high-level features which help to construct extra representation for target images.
 And the transition probabilities matrix used in \cite{ng2012co,wu2014co} also need prior training data in the source as well as target domains.
-Since all the data instance in the target domain arrive sequentially, we do not have enough data for training process.
-To deal with this problem, we establish a relationship based on the similarity between the instance in the target domain and the heterogeneous data without a batch training procedure.
+In our problem setting, since all the data instance in the target domain arrive sequentially, we do not have enough data for training process.
+To deal with this problem, we establish a relationship based on the similarity between the instance in the target domain and the heterogeneous data without any batch training procedure.
 
 \subsection{Online Learning}
-
 Online learning has been actively studied for years.
-Compared to the off-line machine learning problem that training data are given first, online learning learner receives data instances sequentially.
-An online learning learner make a prediction immediately and adjust itself during the process of task.
+Compared to the offline machine learning problem where training data are given first, online learning learner receives data instances sequentially.
+An online learning learner make a prediction immediately and adjust itself during the process of the task.
 One of the classic algorithms of online learning is Perceptron algorithm \cite{rosenblatt1958perceptron}, which move the decision bound towards the direction of an instance which is labeled wrong.
 Passive-Aggressive algorithm and its variants take the criterion of maximum margin into account \cite{crammer2006online}.
 
-However, only a few works address transfer learning in an online fasion.
-\cite{zhao2010otl,zhao2014online} adopt an ensemble strategy to deal with the homogeneous transfer learning problem, and a co-regularization principle is used to handle the heterogeneous transfer learning problem.
-Nevertheless, the multi-view approach for online heterogeneous transfer in \cite{zhao2010otl,zhao2014online} assume that the feature space of the source domain is a subset of that of the target domain.
+However, only a few works address transfer learning in an online fashion.
+\cite{zhao2010otl,zhao2014online} adopt an ensemble strategy to deal with online homogeneous transfer learning problem, and a co-regularization principle is used to handle online heterogeneous transfer learning problem.
+Nevertheless, the multi-view approach for online heterogeneous transfer in \cite{zhao2010otl,zhao2014online} requires that the feature space of the source domain is a subset of that of the target domain.
 Instead, we consider a situation that the feature spaces of the source and target domains do not share any common subset.
-Co-occurrence data are used to help us transfer knowledge learnt from the heterogeneous source domain.
+Co-occurrence data are used to help us transfer knowledge learnt from the heterogeneous source domain to the target domain.
 
 \section{Problem Definition}
 
 Suppose that we are given some instances $\{\mathbf{x}_{i}^{s}, y_{i}^{s}\}$ in the source data space $\mathcal{X}^{s} \times \mathcal{Y}^{s}$, where $\mathcal{X}^{s} = \mathbb{R}^{d^s}$ and $\mathcal{Y}^{s} = \{+1,-1\}$.
-The objective of online transfer learning is to learn a classifier $f(\mathbf{x}_{t})$ to classify the instance on a target domain in a online fasion.
+The objective of online transfer learning is to learn a classifier $f(\mathbf{x}_{t})$ to classify the instance on the target domain in an online fashion.
 The data space of the target domain is $\mathcal{X} \times \mathcal{Y}$, where $\mathcal{X} = \mathbb{R}^{d}$ and $\mathcal{Y} = \{+1,-1\}$.
-Specifically, the task of online heterogeneous transfer learning is a sequential process, during which an image instance $\mathbf{x}_t$ comes at the $t$-th trial, and the classifier generates a predicted class label $\hat{y}_{t}$.
-Then the classifier receives the true class label $y_t$ and update itself to obtain better classification ability.
+Specifically, the task of online heterogeneous transfer learning is a sequential process, during which an instance $\mathbf{x}_t$ comes at the $t$-th trial, and the classifier generates a predicted class label $\hat{y}_{t}$.
+Then the classifier receives the correct class label $y_t$ and update itself to obtain a better classification ability.
 
-In our problem setting, $\mathcal{Y} = \mathcal{Y}^{s}$, which means the same class label in two domains indicates the same class, for instance, $+1$ indicates an instance labeled vehicle and $-1$ indicates an instance labeled tree.
-Nevertheless, the motivation of us is to conduct online classification task by leveraging knowledge in a heterogeneous source domain.
+In our problem setting, $\mathcal{Y} = \mathcal{Y}^{s}$, which means the same class label in two domains indicates the same class.
+For instance, $+1$ indicates vehicle class and $-1$ represents tree class.
+While the feature spaces of the source and target domains are completely different.
 Formally, $\mathcal{X} \cap \mathcal{X}^{s} = \varnothing$.
-We cannot directly transfer information from a completely different source domain.
-Therefore, a sophistecated knowledge transfer method is proposed.
+We cannot directly transfer knowledge from a completely different source domain.
+Therefore, a sophistecated knowledge transfer method is required.
 
 \section{Methods}
 
 In this section, we describe the details of our proposed algorithms.
-We extend HomOTL algorithms, which exploit knowledge in a homogeneous source domain, to tackle the online heterogeneous transfer learning problem.
+We extend HomOTL algorithms \cite{zhao2014online}, which exploit knowledge in a homogeneous source domain, to tackle the online heterogeneous transfer learning problem.
 We first introduce our approach of how to establish relationship between two different domains to build classifier using heterogeneous source data.
 Then we present online heterogeneous transfer learning algorithms.
 
 \subsection{Heterogeneous Knowledge Transfer}
 
-In order to transfer knowledge in the heterogneous source to the target domain, we construct a connection between two domains, and then design a hypothesis to predict class label of the instance in the target domain.
+In order to transfer knowledge in the heterogneous source to the target domain, we construct a connection between two domains, and then design a hypothesis to make prediction using auxiliary data in the heterogeneous source domain.
 
 Our idea is to bridge two domains via their co-occurrence information.
-Given some co-occurrence data instances $\{ \mathbf{x}_{i}^{o} \}$ in the data space $\mathcal{X}^o$, which can be split into two part $\mathcal{X}^{(1)}$ and $\mathcal{X}^{(2)}$.
-Then we have $ \mathbf{x}_{i}^{o} = (\mathbf{x}_{i}^{(1)}, \mathbf{x}_{i}^{(2)}) $.
+Given some co-occurrence data instances $\{ \mathbf{x}_{i}^{o} \}$ in the data space $\mathcal{X}^o$, and $\mathcal{X}^o$ can be split into two part $\mathcal{X}^{(1)}$ and $\mathcal{X}^{(2)}$.
+Then the co-occurrence data instance $\mathbf{x}_{i}^{o}$ can also be represented by $(\mathbf{x}_{i}^{(1)}, \mathbf{x}_{i}^{(2)})$.
 The first part of the feature space of co-occurrence data is the same as the feature space of the target domain, and the second part is the same as the feature space of the source domain.
 More specifically, we have $\mathcal{X}^{(1)} = \mathcal{X}$, and $\mathcal{X}^{(2)} = \mathcal{X}^s$.
 
 It is convenience to collect co-occurrence data from the Internet.
 For example, tagged images from Flickr can be used as the co-occurrence data between image data space and text data space.
-When $\mathcal{X}$ is the feature space of English document and $\mathcal{X}^s$ is the feature space of Chinese document, the co-occurrence data can be collected from Wikipedia webpages titled by corresponding term.
-Figure illustrates the relationship among two domains and the co-occurrence data.
+When $\mathcal{X}$ is the feature space of English document and $\mathcal{X}^s$ is the feature space of Chinese document, the co-occurrence data can be collected from Wikipedia webpages titled by the corresponding term.
 
 As $\mathcal{X}^{(1)} = \mathcal{X}$, at $t$-th trial, we can construct a similarity vector $Sim_{t}^{(1)}$ to measure the affinity between $\mathbf{x}_t$ and each instance of co-occurrence data. 
-The $i$-th element $Sim_{t}^{(1)}(i)$ is Pearson correlation between $\mathbf{x}_t$ and $\mathbf{x}_{i}^{o}$.
+The $i$-th element $Sim_{t}^{(1)}(i)$ is the Pearson correlation between $\mathbf{x}_t$ and $\mathbf{x}_{i}^{o}$.
 The formula shows as follows:
 $$ Sim_{t}^{(1)}(i) = \frac{(\mathbf{x}_t - \bar{\mathbf{x}}_t) \cdot (\mathbf{x}_{i}^{(1)} - \bar{\mathbf{x}}_{i}^{(1)})}{\| \mathbf{x}_t - \bar{\mathbf{x}}_t \| \| \mathbf{x}_{i}^{(1)} - \bar{\mathbf{x}}_{i}^{(1)} \|} $$
 where $\bar{\mathbf{z}} = mean(\mathbf{z})$.
-Also, we can construct a similarity matrix $Sim^{(2)}$ to measure the affinity among instances from co-occurrence data and the heterogeneous source domain.
+Also, we can construct a similarity matrix $Sim^{(2)}$ to measure the affinity between the instances of co-occurrence data and the heterogeneous source domain.
 The formula of the $(i,j)$-th element $Sim^{(2)}(i,j)$ is
 $$ Sim^{(2)}(i,j) = \frac{(\mathbf{x}_{i}^{(2)} - \bar{\mathbf{x}}_{i}^{(2)}) \cdot (\mathbf{x}_{j}^{s} - \bar{\mathbf{x}}_{j}^{s})}{\| \mathbf{x}_{i}^{(2)} - \bar{\mathbf{x}}_{i}^{(2)} \| \| \mathbf{x}_{j}^{s} - \bar{\mathbf{x}}_{j}^{s} \|} $$
 Finally, we obtain a similarity vector $Sim_t$ between $\mathbf{x}_t$ and each instance in the heterogeneous source domain, with its $j$-th entry is calculated by 
@@ -180,12 +179,12 @@ where $N$ is the set of identifiers of $K$ nearest neighbors in the heterogeneou
 
 \subsection{Online Heterogeneous Transfer Algorithms}
 
-Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning stragety similar to HomOTL algorithms.
+Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning strategy similar to HomOTL algorithms.
 
-We first construct a prediction function in the target domain using online learning algorithm PA, and then combine two hypotheses to get final classifier.
+We first construct a prediction function in the target domain using online learning algorithm PA, and then combine two hypotheses to get the final classifier.
 According to the loss value suffered by each hypothesis seperately, we dynamically update two weights of both hypotheses.
 Without loss of generality, we use linear function in the target domain to simplify the description.
-Through the kernel trick, we are able to tackle the non-linear classification problem.
+Through the kernel trick, we are able to tackle non-linear classification problem.
 
 Algorithm 1 presents the process of the proposed online heterogeneous transfer learning algorithm 1 (OHT1).
 $w_{1}^{s}$ and $w_1$ reflect the prior confidence we have on two hypotheses, and must sum to 1.
@@ -193,7 +192,7 @@ If we have no preference on any of them, we can simply set $w_{1}^{s} = w_{t} = 
 Function $\varOmega(z) = \max \{ 0, \min \{ 1, \frac{z+1}{2} \}\}$ projects $z \in \mathbb{R}$ to range $[0,1]$.
 In order to adjust two weights dynamically, exponentially weighting update method \cite{cesa2006prediction} is used.
 
-It is worthwhile to note that the equation in step 8, which calculate the updating factor of linear classifier trained on the target domain, can be replaced by two variants.
+It is worthwhile to note that the equation in step 8, which calculate the updating factor of linear classifier trained in the target domain, can be replaced by two variants.
 In \cite{crammer2006online}, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
 The corresponding equations of calculation of $\tau$ are $\tau_t = \min \{ C, \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2} \} $ and $ \tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $ respectively.
 Likewise, by replacing the equation in Step 8, we can obtain two variants OHT1-\uppercase\expandafter{\romannumeral1} and OHT1-\uppercase\expandafter{\romannumeral2}.
@@ -232,7 +231,7 @@ $\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1
 \end{algorithm}
 
 Algorithm 2 summarizes the online heterogeneous transfer learning 2 (OHT2).
-OHT2 has a more polarized attitude to two hypotheses.
+OHT2 holds a more polarized attitude to two hypotheses.
 Indication function $I(\cdot)$ represents whether the hypothesis makes a wrong prediction or not.
 The mistake made by a hypothesis will decrease its weight in the next trial.
 
@@ -272,23 +271,22 @@ $\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1
 
 
 \section{Theoretical Analysis of OHT Algorithms}
-In this section, we utilize $\mathbf{Hedge}(\beta)$ algorithm framework to help us understand OHT algorithms.
-We also derive mistake bound of OHT algorithms.
+In this section, we utilize $\mathbf{Hedge}(\beta)$ algorithm framework to help us understand OHT algorithms and derive mistake bound of OHT algorithms.
 
-At $t$-th trial of online learning problem, $\mathbf{Hedge}(\beta)$ algorithm framework synthesize opinions from different experts based on a weight vector $\mathbf{weight}_t$.
+At the $t$-th trial of online learning problem, $\mathbf{Hedge}(\beta)$ algorithm framework synthesizes opinions from different experts based on a weight vector $\mathbf{weight}_t$.
 After the loss value of each expert has been received, the weight vector is updated using rule
 $$ weight_{t+1}^{i} = weight_{t}^{i} \cdot \beta^{loss_{t}^{i}} $$
 where $\beta \in [0,1]$ and $loss_{t}^{i} \in [0,1]$.
 
 In our proposed OHT algorithms, we refer to two hypotheses from two domains as the experts.
-We denote the loss value at $t$-th trial of the source domain and the targe domain by $\ell_{t}^{s}$ and $\ell_t$ respectively.
+We denote the loss value at the $t$-th trial of the source domain and the targe domain by $\ell_{t}^{s}$ and $\ell_t$ respectively.
 For OHT1 algorithms, we take $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$, $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$, and $\beta = \exp\{-\eta\}$ where $\eta > 0$.
 For OHT2 algorithms we take $\ell_{t}^{s} = I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)$, $\ell_t = I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)$, and $\beta = \alpha$.
 It is easy to validate that the weight updating strategies in OHT algorithms obey the rule of $\mathbf{Hedge}(\beta)$ algorithm framework.
 
-Notice that loss value $\ell_{t}^{*}$ in step 7 of OHT algorithms is calculated based on the hypothesis trained in the target domain independently.
-Specifically, the calculation of $\ell_{t}^{*}$, which comes from PA algorithm, aims to update the hypothesis in the target domain.
-However, we use $\ell_{t}^{s}$ and $\ell_t$ to represent the loss suffered by each hypothesis seperately, and adjust the weights of two hypotheses from different domains.
+Notice that the loss value $\ell_{t}^{*}$ in step 7 of OHT algorithms is calculated based on the hypothesis trained in the target domain independently.
+The calculation of $\ell_{t}^{*}$, which comes from PA algorithm, aims to update the hypothesis in the target domain.
+Instead, we use $\ell_{t}^{s}$ and $\ell_t$ to represent the loss suffered by each hypothesis seperately, and adjust the weights of two hypotheses from different domains.
 
 Before we present the mistake bound of our two OHT algorithms, we first give a proposition which can be used to derive mistake bound of both OHT algorithms.
 
@@ -313,15 +311,15 @@ $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=
 
 The technique of the proof can be found in \cite{freund1995decision}.
 \begin{rem}
-The physical meaning of the Proposition 1 is that the entire loss value, which sums up the combined loss at every trial, is not much larger than the loss value maded by the better hypothesis.
+The physical meaning of the Proposition 1 is that the entire loss value, which sums up the combined loss at all $T$ trials, is not much larger than the loss value maded by the better single hypothesis.
 At the right side of the inequation, $\ln(\frac{1}{w_{1}^{s}})$ and $\ln(\frac{1}{w_1})$ measure the prior confidence we have on two hypotheses.
 If we have no reason to prefer any of them, we simply set $w_{1}^{s} = w_1 = \frac{1}{2}$.
-Thus, the upper bound is only depend on the summation of loss made by two hypotheses seperately.
+At this time, the upper bound is only depend on the summation of loss made by two hypotheses seperately.
 On the other hand, if we accidently trust the right expert, we could get a tighter bound.
 For instance, if we choose to believe that $\sum\limits_{t=1}^{T} \ell_{t} < \sum\limits_{t=1}^{T} \ell_{t}^{s}$, and fortunately it is the truth at the same time, then we set $w_1 > w_{1}^{s}$.
 Consequently, we get a better bound than the one when we set $w_{1}^{s} = w_{1}$.
 
-Based on Proposition 1, we can analyze the mistake bound of proposed algorithms.
+Based on Proposition 1, we can analyze the mistake bound of the proposed algorithms.
 
 \end{rem}
 
@@ -557,10 +555,10 @@ We obtain generally comparable running time to PA, and at the same time, achieve
 
 \section{Conclusion}
 
-In this paper, we explore online heterogeneous transfer learning problem, whose objective is to tackle an online classification task on a target domain by leveraging knowledge extracted from a heterogeneous source domain.
+In this paper, we explore online heterogeneous transfer learning problem, whose objective is to tackle an online classification task in a target domain by leveraging knowledge extracted from a heterogeneous source domain.
 We construct a connection across the domains using co-occurrence data, and apply the ensemble strategy to train a classifier based on two hypotheses coming from different domains.
 We also offer the theoretical analysis of our algorithms.
-Experimental results show that the proposed algorithms significantlly outperform the baseline methods.
+Experimental results show that the proposed algorithms outperform the baseline methods.
 In the future, we will consider the application with other types of data, or the scenario which includes more than one source domains.
 
 \bibliographystyle{aaai}
