@@ -1,0 +1,157 @@
+@inproceedings{liao2005logistic,
+  title={Logistic regression with an auxiliary data source},
+  author={Liao, Xuejun and Xue, Ya and Carin, Lawrence},
+  booktitle={Proceedings of the 22nd international conference on Machine learning},
+  pages={505--512},
+  year={2005},
+  organization={ACM}
+}
+
+@inproceedings{dai2007boosting,
+  title={Boosting for transfer learning},
+  author={Dai, Wenyuan and Yang, Qiang and Xue, Gui-Rong and Yu, Yong},
+  booktitle={Proceedings of the 24th international conference on Machine learning},
+  pages={193--200},
+  year={2007},
+  organization={ACM}
+}
+
+@inproceedings{dai2007transferring,
+  title={Transferring naive bayes classifiers for text classification},
+  author={Dai, Wenyuan and Xue, Gui-Rong and Yang, Qiang and Yu, Yong},
+  booktitle={PROCEEDINGS OF THE NATIONAL CONFERENCE ON ARTIFICIAL INTELLIGENCE},
+  volume={22},
+  number={1},
+  pages={540},
+  year={2007},
+  organization={Menlo Park, CA; Cambridge, MA; London; AAAI Press; MIT Press; 1999}
+}
+
+@inproceedings{wang2009building,
+  title={Building text features for object image classification},
+  author={Wang, Gang and Hoiem, Derek and Forsyth, David},
+  booktitle={Computer Vision and Pattern Recognition, 2009. CVPR 2009. IEEE Conference on},
+  pages={1367--1374},
+  year={2009},
+  organization={IEEE}
+}
+
+@inproceedings{yang2009heterogeneous,
+  title={Heterogeneous transfer learning for image clustering via the social web},
+  author={Yang, Qiang and Chen, Yuqiang and Xue, Gui-Rong and Dai, Wenyuan and Yu, Yong},
+  booktitle={Proceedings of the Joint Conference of the 47th Annual Meeting of the ACL and the 4th International Joint Conference on Natural Language Processing of the AFNLP: Volume 1-Volume 1},
+  pages={1--9},
+  year={2009},
+  organization={Association for Computational Linguistics}
+}
+
+@article{pan2010survey,
+  title={A survey on transfer learning},
+  author={Pan, Sinno Jialin and Yang, Qiang},
+  journal={Knowledge and Data Engineering, IEEE Transactions on},
+  volume={22},
+  number={10},
+  pages={1345--1359},
+  year={2010},
+  publisher={IEEE}
+}
+
+@inproceedings{shi2010predictive,
+  title={Predictive Modeling with Heterogeneous Sources.},
+  author={Shi, Xiaoxiao and Liu, Qi and Fan, Wei and Yang, Qiang and Philip, S Yu},
+  booktitle={SDM},
+  pages={814--825},
+  year={2010},
+  organization={SIAM}
+}
+
+@inproceedings{yao2010boosting,
+  title={Boosting for transfer learning with multiple sources},
+  author={Yao, Yi and Doretto, Gianfranco},
+  booktitle={Computer Vision and Pattern Recognition (CVPR), 2010 IEEE Conference on},
+  pages={1855--1862},
+  year={2010},
+  organization={IEEE}
+}
+
+@inproceedings{zhao2010otl,
+  title={OTL: A framework of online transfer learning},
+  author={Zhao, Peilin and Hoi, Steven C},
+  booktitle={Proceedings of the 27th International Conference on Machine Learning (ICML-10)},
+  pages={1231--1238},
+  year={2010}
+}
+
+@inproceedings{eaton2011selective,
+  title={Selective Transfer Between Learning Tasks Using Task-Based Boosting.},
+  author={Eaton, Eric and Marie desJardins},
+  booktitle={AAAI},
+  year={2011}
+}
+
+@inproceedings{wei2011heterogeneous,
+  title={Heterogeneous Transfer Learning with RBMs.},
+  author={Wei, Bin and Pal, Christopher J},
+  booktitle={AAAI},
+  year={2011}
+}
+
+@inproceedings{zhu2011heterogeneous,
+  title={Heterogeneous Transfer Learning for Image Classification.},
+  author={Zhu, Yin and Chen, Yuqiang and Lu, Zhongqi and Pan, Sinno Jialin and Xue, Gui-Rong and Yu, Yong and Yang, Qiang},
+  booktitle={AAAI},
+  year={2011}
+}
+
+@inproceedings{ng2012co,
+  title={Co-transfer learning via joint transition probability graph based method},
+  author={Ng, Michael K and Wu, Qingyao and Ye, Yunming},
+  booktitle={Proceedings of the 1st International Workshop on Cross Domain Knowledge Discovery in Web and Social Network Mining},
+  pages={1--9},
+  year={2012},
+  organization={ACM}
+}
+
+
+@article{wu2014co,
+Publication-Type = {{J}},
+Type = {{Journal Paper}},
+Title = {{Cotransfer Learning Using Coupled Markov Chains with Restart}},
+Author = {{Qingyao Wu} and Ng, M.K. and {Yunming Ye}},
+Journal = {{IEEE Intelligent Systems}},
+Month = {{July}},
+Year = {{2014}},
+Volume = {{29}},
+Issue = {{4}},
+Pages = {{26-33}},
+ISSN = {{1541-1672}},
+Identifying-Codes = {{[10.1109/MIS.2013.32]}},
+Unique-ID = {{INSPEC:14630383}},
+}
+
+@inproceedings{tan2014mixed,
+  title={Mixed-transfer: transfer learning over mixed graphs},
+  author={Tan, Ben and Zhong, Erheng and Ng, M and Yang, Qiang},
+  booktitle={Proceedings of SIAM International Conference on Data Mining},
+  year={2014}
+}
+
+@article{zhao2014online,
+  title={Online Transfer Learning},
+  author={Zhao, Peilin and Hoi, Steven CH and Wang, Jialei and Li, Bin},
+  journal={Artificial Intelligence},
+  volume={216},
+  pages={76--102},
+  year={2014},
+  publisher={Elsevier}
+}
+
+@inproceedings{zhou2014hybrid,
+  title={Hybrid Heterogeneous Transfer Learning through Deep Learning},
+  author={Zhou, Joey Tianyi and Pan, Sinno Jialin and Tsang, Ivor W and Yan, Yan},
+  booktitle={28th AAAI Conference on Artificial Intelligence, AAAI 2014, 26th Innovative Applications of Artificial Intelligence Conference, IAAI 2014 and the 5th Symposium on Educational Advances in Artificial Intelligence, EAAI 2014},
+  volume={3},
+  pages={2213--2219},
+  year={2014}
+}
+
