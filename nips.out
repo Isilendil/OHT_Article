@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section*.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section*.2}{Related Work}{}% 2
+\BOOKMARK [2][-]{section*.3}{Heterogeneous Transfer Learning}{section*.2}% 3
+\BOOKMARK [2][-]{section*.4}{Online Learning}{section*.2}% 4
+\BOOKMARK [1][-]{section*.5}{Problem Definition}{}% 5
+\BOOKMARK [1][-]{section*.6}{Methods}{}% 6
+\BOOKMARK [2][-]{section*.7}{Heterogeneous Knowledge Transfer}{section*.6}% 7
+\BOOKMARK [2][-]{section*.8}{Online Heterogeneous Transfer Algorithms}{section*.6}% 8
+\BOOKMARK [1][-]{section*.9}{Theoretical Analysis of OHT Algorithms}{}% 9
+\BOOKMARK [2][-]{section*.10}{Mistake Bound of OHT1}{section*.9}% 10
+\BOOKMARK [2][-]{section*.11}{Mistake Bound of OHT2}{section*.9}% 11
+\BOOKMARK [1][-]{section*.12}{Experimental Results}{}% 12
+\BOOKMARK [2][-]{section*.13}{Dataset}{section*.12}% 13
+\BOOKMARK [2][-]{section*.14}{Baseline Methods}{section*.12}% 14
+\BOOKMARK [2][-]{section*.15}{Results and Discussion}{section*.12}% 15
+\BOOKMARK [2][-]{section*.16}{Parameters and Running time}{section*.12}% 16
+\BOOKMARK [1][-]{section*.19}{Conclusion}{}% 17
