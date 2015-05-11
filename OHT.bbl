@@ -1,18 +1,26 @@
 \begin{thebibliography}{}
 
 \bibitem[\protect\citeauthoryear{Cesa-Bianchi and
-  Lugosi}{2006}]{cesa2006prediction}
+  Lugosi}{2006}]{2006predictionCesa}
 Cesa-Bianchi, N., and Lugosi, G.
 \newblock 2006.
 \newblock {\em Prediction, learning, and games}.
 \newblock Cambridge University Press.
 
+\bibitem[\protect\citeauthoryear{Chua \bgroup et al\mbox.\egroup }{July 8 10
+  2009}]{nus-wide-civr09}
+Chua, T.-S.; Tang, J.; Hong, R.; Li, H.; Luo, Z.; and Zheng, Y.-T.
+\newblock July 8-10, 2009.
+\newblock Nus-wide: A real-world web image database from national university of
+  singapore.
+\newblock In {\em Proc. of ACM Conf. on Image and Video Retrieval (CIVR'09)}.
+
 \bibitem[\protect\citeauthoryear{Crammer \bgroup et al\mbox.\egroup
-  }{2006}]{crammer2006online}
+  }{2006}]{2006onlineCrammer}
 Crammer, K.; Dekel, O.; Keshet, J.; Shalev-Shwartz, S.; and Singer, Y.
-\newblock 2006.
-\newblock Online passive-aggressive algorithms.
-\newblock {\em The Journal of Machine Learning Research} 7:551--585.
+\newblock {2006}.
+\newblock {Online passive-aggressive algorithms}.
+\newblock {\em {JOURNAL OF MACHINE LEARNING RESEARCH}} {7}:{551--585}.
 
 \bibitem[\protect\citeauthoryear{Dai \bgroup et al\mbox.\egroup
   }{2007a}]{dai2007transferring}
@@ -40,13 +48,14 @@ Eaton, E., and desJardins, M.
 \newblock In {\em AAAI}.
 
 \bibitem[\protect\citeauthoryear{Freund and
-  Schapire}{1995}]{freund1995decision}
-Freund, Y., and Schapire, R.~E.
-\newblock 1995.
-\newblock A desicion-theoretic generalization of on-line learning and an
-  application to boosting.
-\newblock In {\em Computational learning theory},  23--37.
-\newblock Springer.
+  Schapire}{1997}]{1997decisionFreund}
+Freund, Y., and Schapire, R.
+\newblock {1997}.
+\newblock {A decision-theoretic generalization of on-line learning and an
+  application to boosting}.
+\newblock {\em {JOURNAL OF COMPUTER AND SYSTEM SCIENCES}} {55}({1}):{119--139}.
+\newblock {26th Annual ACM Symposium on the Theory of Computing (STOC),
+  MONTREAL, CANADA, MAY 23-25, 1994}.
 
 \bibitem[\protect\citeauthoryear{Liao, Xue, and Carin}{2005}]{liao2005logistic}
 Liao, X.; Xue, Y.; and Carin, L.
@@ -79,12 +88,12 @@ Pan, S.~J., and Yang, Q.
 \newblock {Cotransfer Learning Using Coupled Markov Chains with Restart}.
 \newblock {\em {IEEE Intelligent Systems}} {29}:{26--33}.
 
-\bibitem[\protect\citeauthoryear{Rosenblatt}{1958}]{rosenblatt1958perceptron}
+\bibitem[\protect\citeauthoryear{Rosenblatt}{1958}]{1958perceptronRosenblatt}
 Rosenblatt, F.
 \newblock 1958.
-\newblock The perceptron: a probabilistic model for information storage and
-  organization in the brain.
-\newblock {\em Psychological review} 65(6):386.
+\newblock {THE PERCEPTRON: A PROBABILISTIC MODEL FOR INFORMATION STORAGE AND
+  ORGANIZATION}.
+\newblock {\em Psychological Review} 65(6):386--408.
 
 \bibitem[\protect\citeauthoryear{Tan \bgroup et al\mbox.\egroup
   }{2014}]{tan2014mixed}

@@ -8,6 +8,7 @@
 
 \usepackage{graphicx}
 \usepackage{subfigure}
+\usepackage{float}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{algorithm}
@@ -26,6 +27,7 @@
 \renewcommand{\algorithmicensure}{\textbf{Initialize:}}
 %\newcommand{\vector}{\mathbf}
 \DeclareMathOperator{\sign}{sign}
+
 
 \frenchspacing
 \setlength{\pdfpagewidth}{8.5in}
@@ -70,7 +72,8 @@ A great number of works in the last decade deal with homogeneous transfer learni
 Nevertheless, more and more studies consider heterogeneous transfer learning problem.
 Heterogeneous transfer addresses the situation that either the feature spaces or the output spaces of the source and target domains are diverse.
 
-\begin{figure}[!htb]
+%\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
   \includegraphics[width=8cm]{problem.pdf}
   \label{problem}
@@ -92,7 +95,7 @@ There are two principal challenges in online heterogeneous transfer learning pro
 The first one is the fact that the feature spaces of the source and target domains are completely diverse, which makes it difficult to construct relationship across domains.
 The second one comes from the characteristic of online learning problem.
 As the data instances arrive in an sequential manner, we do not have enough training data from the target domain in advance.
-Thus, we cannot adopt a training method to build precise relasionship between the source and target domains.
+Thus, we cannot adopt a training method to build a precise relationship between the source and target domains.
 
 In order to solve aforementioned problems, we propose \textbf{O}nline \textbf{H}eterogeneous \textbf{T}ransfer (OHT) algorithms based on the ensemble strategy.
 Our idea is to transfer knowledge via co-occurrence information across the source and target domains.
@@ -130,8 +133,8 @@ To deal with this problem, we adopt a lazy classification algorithm using hetero
 Online learning has been actively studied for many years.
 Unlike the offline machine learning problem where training data are given first, online learning learner receives data instances sequentially.
 An online learning learner make a prediction immediately and adjust itself during the process of the task.
-One of the classic algorithms of online learning is Perceptron algorithm \cite{rosenblatt1958perceptron}, which move the decision bound towards the direction of an instance which is labeled wrong.
-Passive-Aggressive algorithm and its variants take the criterion of maximum margin into account \cite{crammer2006online}.
+One of the classic algorithms of online learning is Perceptron algorithm \cite{1958perceptronRosenblatt}, which move the decision bound towards the direction of an instance which is labeled wrong.
+Passive-Aggressive algorithm and its variants take the criterion of maximum margin into account \cite{2006onlineCrammer}.
 
 However, only a few works address transfer learning in an online fashion.
 In \cite{zhao2010otl,zhao2014online}, the ensemble strategy is adopted to deal with online homogeneous transfer learning problem, and the multi-view approach is used to handle online heterogeneous transfer learning problem.
@@ -170,7 +173,8 @@ It is convenience to collect co-occurrence data from the Internet.
 For example, tagged images from Flickr can be used as the co-occurrence data between the data spaces of image and text.
 When $\mathcal{X}$ is the feature space of English document and $\mathcal{X}^s$ is the feature space of Chinese document, the co-occurrence data can be collected from Wikipedia web pages titled by the corresponding term.
 
-\begin{figure}[!htb]
+%\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
   \includegraphics[width=8cm]{knowledgetransfer.pdf}
   \label{knowledgetransfer}
@@ -196,10 +200,10 @@ where $N$ is the set of identifiers of $K$ nearest neighbors in the heterogeneou
 
 \subsection{Online Heterogeneous Transfer Algorithms}
 
-Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning strategy similar to HomOTL algorithms.
+Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning strategy to design classifier.
 
-We first construct a prediction function in the target domain using online learning algorithm PA, and then combine two hypotheses to get the final classifier.
-According to the loss value suffered by each hypothesis seperately, we dynamically update two weights of both hypotheses.
+We first construct a prediction function in the target domain using online learning algorithm PA \cite{2006onlineCrammer}, and then combine two hypotheses to get the final classifier.
+According to the loss value suffered by each hypothesis seperately, we dynamically update two weights of hypotheses.
 Without loss of generality, we use linear function in the target domain to simplify the description.
 Through the kernel trick, we are able to tackle non-linear classification problem.
 
@@ -207,12 +211,12 @@ Algorithm 1 presents the process of the proposed online heterogeneous transfer l
 $w_{1}^{s}$ and $w_1$ reflect the prior confidence we have on two hypotheses, and must sum to 1.
 If we have no preference on any of them, we can simply set $w_{1}^{s} = w_{t} = \frac{1}{2}$, which is also the setting we used in our experiments.
 Function $\varOmega(z) = \max \{ 0, \min \{ 1, \frac{z+1}{2} \}\}$ projects $z \in \mathbb{R}$ to range $[0,1]$.
-In order to adjust two weights dynamically, exponentially weighting update method \cite{cesa2006prediction} is used.
+In order to adjust two weights dynamically, exponentially weighting update method \cite{2006predictionCesa} is used.
 
 It is worthwhile to note that the equation in step 8, which calculate the updating factor of linear classifier trained in the target domain, can be replaced by two variants.
-In \cite{crammer2006online}, PA-\uppercase\expandafter{\romannumeral1} introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} introduces a quadratic slack variable.
-The corresponding equations of calculation of $\tau$ are $\tau_t = \min \{ C, \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2} \} $ and $ \tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $ respectively.
-Likewise, by replacing the equation in Step 8, we can obtain two variants OHT1-\uppercase\expandafter{\romannumeral1} and OHT1-\uppercase\expandafter{\romannumeral2}.
+In \cite{2006onlineCrammer}, PA-\uppercase\expandafter{\romannumeral1} algorithm introduces a non-negative linear slack variable into PA, and PA-\uppercase\expandafter{\romannumeral2} algorithm introduces a quadratic slack variable.
+The corresponding equations of calculation of learning rate $\tau$ are $\tau_t = \min \{ C, \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2} \} $ and $ \tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $, respectively.
+Likewise, by replacing the equation in Step 8, we obtain two variants OHT1-\uppercase\expandafter{\romannumeral1} and OHT1-\uppercase\expandafter{\romannumeral2}.
 
 \begin{algorithm}
 \begin{algorithmic}[1]
@@ -221,7 +225,7 @@ Likewise, by replacing the equation in Step 8, we can obtain two variants OHT1-\
 aggressiveness parameter $C>0$\\ 
 %~~~~~~~~~discount parameter $\beta \in (0,1)$\\ 
 ~~~~~~~~~$\eta = \frac{1}{2}$ \\
-~~~~~~~~~heterogeneous source data
+~~~~~~~~~data in heterogeneous source 
 \ENSURE ~~
 $\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1}^{s} + w_1 = 1$
 \FOR{$t=1$ to $T$}
@@ -260,7 +264,7 @@ Similar to OHT1 algorithms, we also have two variants OHT2-\uppercase\expandafte
 \REQUIRE ~~
 aggressiveness parameter $C>0$\\ 
 ~~~~~~~~~discount parameter $\alpha \in (0,1)$\\ 
-~~~~~~~~~heterogeneous source data 
+~~~~~~~~~data in heterogeneous source domain
 \ENSURE ~~
 $\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1}^{s} + w_1 = 1$
 \FOR{$t=1$ to $T$}
@@ -293,10 +297,10 @@ In this section, we utilize $\mathbf{Hedge}(\beta)$ algorithm framework to help 
 At the $t$-th trial of online learning problem, $\mathbf{Hedge}(\beta)$ algorithm framework synthesizes opinions from different experts based on a weight vector $\mathbf{weight}_t$.
 After the loss value of each expert has been received, the weight vector is updated using rule
 $$ weight_{t+1}^{i} = weight_{t}^{i} \cdot \beta^{loss_{t}^{i}} $$
-where $\beta \in [0,1]$ and $loss_{t}^{i} \in [0,1]$.
+where $i$ is the index of expert, $\beta \in [0,1]$ and $loss_{t}^{i} \in [0,1]$.
 
 In our proposed OHT algorithms, we refer to two hypotheses from two domains as the experts.
-We denote the loss value at the $t$-th trial of the source domain and the targe domain by $\ell_{t}^{s}$ and $\ell_t$ respectively.
+We denote the loss value at the $t$-th trial of the source and targe domains by $\ell_{t}^{s}$ and $\ell_t$ respectively.
 For OHT1 algorithms, we take $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$, $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$, and $\beta = \exp\{-\eta\}$ where $\eta > 0$.
 For OHT2 algorithms we take $\ell_{t}^{s} = I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)$, $\ell_t = I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)$, and $\beta = \alpha$.
 It is easy to validate that the weight updating strategies in OHT algorithms obey the rule of $\mathbf{Hedge}(\beta)$ algorithm framework.
@@ -326,13 +330,13 @@ $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=
 %\end{equation*}
 \end{prop}
 
-The technique of the proof can be found in \cite{freund1995decision}.
+The technique of the proof can be found in \cite{1997decisionFreund}.
 \begin{rem}
-The physical meaning of the Proposition 1 is that the entire loss value, which sums up the combined loss at all $T$ trials, is not much larger than the loss value maded by the better single hypothesis.
+The physical meaning of the Proposition 1 is that the entire loss value, which sums up the combined loss at all $T$ trials, is not much larger than the loss value made by the better single hypothesis.
 At the right side of the inequation, $\ln(\frac{1}{w_{1}^{s}})$ and $\ln(\frac{1}{w_1})$ measure the prior confidence we have on two hypotheses.
 If we have no reason to prefer any of them, we simply set $w_{1}^{s} = w_1 = \frac{1}{2}$.
-At this time, the upper bound is only depend on the summation of loss made by two hypotheses seperately.
-On the other hand, if we accidently trust the right expert, we could get a tighter bound.
+At this time, the upper bound only depends on the summation of loss made by two hypotheses seperately.
+On the other hand, if we accidently trust the better expert, we could get a tighter bound.
 For instance, if we choose to believe that $\sum\limits_{t=1}^{T} \ell_{t} < \sum\limits_{t=1}^{T} \ell_{t}^{s}$, and fortunately it is the truth at the same time, then we set $w_1 > w_{1}^{s}$.
 Consequently, we get a better bound than the one when we set $w_{1}^{s} = w_{1}$.
 
@@ -342,7 +346,7 @@ Based on Proposition 1, we can analyze the mistake bound of the proposed algorit
 
 \subsection{Mistake Bound of OHT1}
 
-In OHT1 algorithms, $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$, $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$, and $\beta = \exp\{-\eta\}$ where $\eta > 0$.
+In OHT1 algorithms, $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$, $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$, and $\beta = \exp\{-\eta\}$.
 According to Proposition 1, we derive the mistake bound of OHT1 as follows.
 
 \begin{thm}
@@ -430,33 +434,33 @@ Encouraging results demonstrate that the proposed algorithms outperform baseline
 
 % dataset & task description
 \subsection{Dataset}
-Our experiments are conducted for image classification by leveraging information from text data.
-We use NUS-WIDE dataset to generate learning tasks.
+Our experiments are conducted for image classification by leveraging knowledge from text data.
+We use NUS-WIDE dataset \cite{nus-wide-civr09} to generate learning tasks.
 The NUS-WIDE dataset is extracted from Flickr.
-It includes 269,648 images and the associated tags from Flickr, with a total number of 5,018 unique tags.
+It includes 269,648 images and the associated tags, with a total number of 5,018 unique tags.
 An image instance is represented by a feature vector based on SIFT descriptions, and a text instance is represented by a feature vector based on tags.
 There are 81 ground-truth class labels in the dataset.
 We randomly selected 10 classes (bird, boat, car, flower, food, rock, sun, toy, tree) and built $C_{10}^{2} = 45$ binary classification tasks.
 
-We refer the images as data in the target domain, and the tags as the text data in the heterogeneous source domain.
+We refer the images as the data in the target domain, and the tags as the text data in the heterogeneous source domain.
 Each binary classification task has 500 image instances in the target domain, 1,200 text instances in the heterogeneous source domain, and 1,500 co-occurred image-text pairs.
 In order to obtain stable results, we draw 100 times of random permutation of the image instances in the target domain and evaluate the performance of learning algorithms based on average rate of mistakes.
 
 \subsection{Baseline Methods}
 We compare the proposed methods with Passive-Aggressive online learning algorithms.
-PA algorithms proposed in \cite{crammer2006online} does not exploit knowledge from the source domain.
-It deals with the traditional online learning problem in the target domain.
+PA algorithms proposed in \cite{2006onlineCrammer} does not exploit knowledge from the source domain.
+It deals with a traditional online learning problem.
 As each of PA and OHT algorithms have three versions, we conduct three sets of experiments separately.
-Each set of experiments compares two OHT methods against the Passive-Aggressive algorithm which our methods based on.
+Each set of experiments compares two OHT methods against the Passive-Aggressive algorithm which use the same calculation method of learning rate $\tau$.
 
-For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks.
-The kernel parameter $\sigma = 8$ for the target domain.
-The regularization parameter $C = 5$, $ \beta = \frac{\sqrt{T}}{\sqrt{T}+\sqrt{2\ln{4}}} $ for OHT2 algorithm.
+For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks, and the kernel parameter $\sigma = 8$.
+The regularization parameter $C = 5$, and $ \beta = \frac{\sqrt{T}}{\sqrt{T}+\sqrt{2\ln{4}}} $ for OHT2 algorithm.
 In addition, we set the number of nearest neighbors to be considered $K = 100$.
 Sensitivity of parameters will be examined in subsequent sections.
 
 \subsection{Results and Discussion}
 \begin{figure*}[!htb]
+%\begin{figure*}[H]
 \centering
   \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT1-\uppercase\expandafter{\romannumeral2}]
   {
@@ -474,13 +478,14 @@ Sensitivity of parameters will be examined in subsequent sections.
 
 Figure \ref{Average rate of mistakes on all 45 tasks} summarizes the mistake rates of all 45 binary classification tasks in the third set, which compares OHT1-\uppercase\expandafter{\romannumeral2}, OHT2-\uppercase\expandafter{\romannumeral2} and PA-\uppercase\expandafter{\romannumeral2}.
 The x-axis of the figure refers to the 45 tasks.
-We see that on most tasks, PA-\uppercase\expandafter{\romannumeral2} has the very high mistake rate, which prove the dificulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
+We see that on most tasks, PA-\uppercase\expandafter{\romannumeral2} has the very high mistake rate, which prove the difficulty of image classification task without any auxiliary source information and the necessity of knowledge transfer.
 The observation that our proposed OHT methods in general outperform Passive-Aggressive algorithm validates the effectivity of heterogeneous transfer learning.
 Similar experimental results are observed in other two sets.
 Because of the restricted space, we are not able to report them.
-In order to facilitat the description, we denote PA-\uppercase\expandafter{\romannumeral2}, OHT1-\uppercase\expandafter{\romannumeral2} and OHT2-\uppercase\expandafter{\romannumeral2} by PA, OHT1 and OHT2 respectively in the following discussion.
+In order to facilitate the description, we denote PA-\uppercase\expandafter{\romannumeral2}, OHT1-\uppercase\expandafter{\romannumeral2} and OHT2-\uppercase\expandafter{\romannumeral2} by PA, OHT1 and OHT2 respectively in the following discussion.
 
 \begin{figure*}[!htb]
+%\begin{figure*}[H]
 \centering
   \subfigure[Task 2]
   {
@@ -517,7 +522,7 @@ In order to facilitat the description, we denote PA-\uppercase\expandafter{\roma
   \label{Online average rate of mistakes on example tasks}
 \end{figure*}
 
-Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several representative online learning tasks, respectively.
+Figure \ref{Online average rate of mistakes on example tasks} illustrates the dynamic process of several representative classification tasks.
 We observe that OHT algorithms usually achieve better performance at the beginning stage.
 On some tasks(e.g., 7, 16 and 33), the online mistake rates of all three algorithms decrease during the period, and OHT methods always obtain better performance than PA algorithm.
 These observations verifies that the OHT algorithms indeed transfer useful knowledge from the heterogeneous source domain to the target domain. 
@@ -539,13 +544,14 @@ Combining the win/tie/loss results, we see that OHT1 is more stable than OHT2.
 \subsection{Parameters and Running time}
 % parameter sensitivity
 \paragraph{Parameters}
-Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
-Consequently, we only investigate how different values of parameter $K$ affect the mistake rates of the algorithms.
+%Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
+We investigate how different values of parameter $K$ affect the mistake rates of the algorithms.
 Figure \ref{average_error} shows the average mistake rates with varied values of parameter $K$ over all 45 tasks.
-PA algorithm, whose performance is not related to the parameter $K$, provide a baseline rate of mistakes.
+PA algorithm, whose performance is not related to the parameter $K$, provides a baseline rate of mistakes.
 We observe that the performance of the proposed methods consistently outperform PA algorithm, which indicates that nearest neighbors in heterogeneous source domain do provide valuable advice for the classification task.
 
-\begin{figure}[!htb]
+%\begin{figure}[!htb]
+\begin{figure}[H]
 \centering
   \subfigure[]
   {
@@ -563,9 +569,9 @@ We observe that the performance of the proposed methods consistently outperform 
 
 % running time
 \paragraph{Running time}
-All of the algorithms were implemented in Matlab, and all experiments were run in a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
+All the experiments are run in Matlab over a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
 Compared to PA algorithm without exploiting any information from the source domain, OHT algorithms are less efficient.
-The main reason of more running time for OHT algorithms is probably the searching process for the nearest neighbors.
+Despite the extra computation for updating weights, the main reason of more running time for OHT algorithms is probably the searching process for the nearest neighbors.
 We can simply make use of all instances in the heterogeneous source domain to get rid of overhead for searching nearest neighbors.
 Figure \ref{average_time} shows the running time of different algorithms when all instances in the heterogeneous source domain are considered.
 We obtain generally comparable running time to PA, and at the same time, achieve better performance than PA.
@@ -576,7 +582,7 @@ In this paper, we explore online heterogeneous transfer learning problem, whose 
 We construct a connection across the domains using co-occurrence data, and apply the ensemble strategy to train a classifier based on two hypotheses coming from different domains.
 We also offer the theoretical analysis of our algorithms.
 Experimental results show that the proposed algorithms outperform the baseline methods.
-In the future, we will consider the application with other types of data, or the scenario which includes more than one source domains.
+In the future, we will consider the applications with other types of data, or the scenario which includes more than one source domains.
 
 \bibliographystyle{aaai}
 \bibliography{transferlearning,onlinelearning,dataset}

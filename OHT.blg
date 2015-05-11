@@ -4,46 +4,52 @@ The top-level auxiliary file: OHT.aux
 The style file: aaai.bst
 Database file #1: transferlearning.bib
 Database file #2: onlinelearning.bib
+Database file #3: dataset.bib
+I was expecting a `,' or a `}'---line 9 of file dataset.bib
+ : 
+ : 　
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--can't use both volume and number fields in dai2007transferring
-You've used 19 entries,
+You've used 20 entries,
             2568 wiz_defined-function locations,
-            690 strings with 8369 characters,
-and the built_in function-call counts, 8881 in all, are:
-= -- 953
-> -- 366
-< -- 11
-+ -- 128
-- -- 124
-* -- 673
-:= -- 1388
-add.period$ -- 102
-call.type$ -- 19
-change.case$ -- 137
-chr.to.int$ -- 18
-cite$ -- 20
-duplicate$ -- 367
-empty$ -- 638
-format.name$ -- 157
-if$ -- 1898
+            711 strings with 9035 characters,
+and the built_in function-call counts, 9324 in all, are:
+= -- 994
+> -- 399
+< -- 10
++ -- 138
+- -- 136
+* -- 722
+:= -- 1472
+add.period$ -- 107
+call.type$ -- 20
+change.case$ -- 147
+chr.to.int$ -- 19
+cite$ -- 21
+duplicate$ -- 374
+empty$ -- 664
+format.name$ -- 170
+if$ -- 1979
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 20
-newline$ -- 124
-num.names$ -- 57
-pop$ -- 133
+missing$ -- 21
+newline$ -- 130
+num.names$ -- 60
+pop$ -- 141
 preamble$ -- 1
-purify$ -- 157
+purify$ -- 168
 quote$ -- 0
 skip$ -- 287
 stack$ -- 0
-substring$ -- 452
-swap$ -- 116
-text.length$ -- 11
+substring$ -- 476
+swap$ -- 111
+text.length$ -- 10
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 148
+type$ -- 156
 warning$ -- 1
 while$ -- 71
-width$ -- 23
-write$ -- 279
-(There was 1 warning)
+width$ -- 25
+write$ -- 292
+(There was 1 error message)
