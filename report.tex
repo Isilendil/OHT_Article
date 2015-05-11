@@ -1,0 +1,237 @@
+
+\documentclass{beamer}
+\usetheme{Berkeley}
+
+\hypersetup{pdfpagemode=FullScreen}
+
+\setbeamertemplate{footline}[frame number]{}
+
+\usefonttheme{professionalfonts}
+
+\usepackage{algorithm}
+\usepackage{algorithmic}
+
+\usepackage{apacite}
+
+\usepackage{graphicx}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\newcommand{\sign}{\operatorname{sign}}
+
+\renewcommand{\algorithmicrequire}{ \textbf{Input:}}
+\renewcommand{\algorithmicensure}{ \textbf{Output:}}
+
+\let\footnotesize\tiny
+\renewcommand{\thefootnote}{}
+
+\newcommand{\sign}{\operatorname{sign}}
+
+%\AtBeginSection[]
+%{
+  %\begin{frame}
+    %\frametitle{Outlines}
+      %\tableofcontents[sections={\thesection}]
+  %\end{frame}
+%}
+
+\begin{document}
+
+\title[OMT]{Online Multi-Transfer with Homogeneous and Heterogeneous Sources}
+\institute[SCUT]{South China University of Technology}
+\author[yanyg]{Yan Yuguang}
+\date{\today}
+\subject{Online Multi-transfer}
+\keywords{Online Transfer, Multi-transfer, Heterogeneous}
+
+\logo{\includegraphics[height=0.35\textwidth]{scut.pdf}}
+
+\maketitle
+
+%\begin{frame}{Contents}
+  %\tableofcontents[hideallsubsections,sections={<1-4>}]
+%\end{frame}
+
+\section{Problem}
+\begin{frame}{Problem}{Online Multi-transfer Learning}
+The goal is to learn some prediction function $f(\mathbf{x}_t)$ on a target domain in an online fashion from a sequence of instances $\{(\mathbf{x}_t, y_t | t = 1, 2, \cdots, T\}$ in data space $\mathcal{X} \times \mathcal{Y}$.
+\\
+\begin{itemize}
+\item
+Homogeneous source domain: 
+\\
+$$\mathcal{X} = \mathcal{X}^k, \mathcal{Y} = \mathcal{Y}^k$$
+\item
+Heterogeneous source domain: 
+\\
+$$\mathcal{X} \cap \mathcal{X}^k = \emptyset, \mathcal{Y} = \mathcal{Y}^k$$
+~~co-occurrence information \cite{ng2012co}
+\end{itemize}
+\begin{footnotesize}
+\footnote{OTL: A Framework of Online Transfer Learning \cite{zhao2010otl}}
+\footnote{Online Transfer Learning \cite{zhao2014online}}
+\end{footnotesize}
+\end{frame}
+
+\section{Related Work}
+\begin{frame}{Related Work}{OTL on homogeneous domain}
+$ \mathcal{X}_s = \mathcal{X} $
+\\
+Resemble learning strategy: 
+\includegraphics[height=0.35\textwidth]{HomOTL1.png}
+\begin{footnotesize}
+\footnote{Online Transfer Learning \cite{zhao2014online}}
+\end{footnotesize}
+\end{frame}
+
+
+\begin{frame}{Related Work}{OTL on homogeneous domain}
+\includegraphics[height=0.35\textwidth]{HomOTL2.png}
+\begin{footnotesize}
+\footnote{Online Transfer Learning \cite{zhao2014online}}
+\end{footnotesize}
+\end{frame}
+
+\begin{frame}{Related Work}{OTL on heterogeneous domain}
+$ \mathcal{X}_s \subset \mathcal{X} $
+\\
+Multi-view approach:
+\includegraphics[height=0.35\textwidth]{HetOTL.png}
+\end{frame}
+
+%\begin{frame}{Related Work}{Heterogeneous Transfer Learning}
+%\begin{enumerate}
+%\item[1]
+%$ mathcal{Y}_S \neq mathcal{Y}_T $ \\
+%Similarity preserving transformation \\
+%graphics
+%\item[2]
+%$ \mathcal{X}_S \subset \mathcal{X}_T $
+%\end{enumerate}
+%\begin{footnotesize}
+%Predictive Modeling with Heterogeneous Sources cite
+%\end{footnotesize}
+%\end{frame}
+%
+%\begin{frame}{Related Work}{Heterogeneous Transfer Learning}
+%\begin{enumerate}
+%\item[3]
+%$ \mathcal{X}_S \cap \mathcal{X}_T = \emptyset$ 
+%\begin{itemize}
+%\item
+%Image Clustering \\
+%~~Probabilistic latent semantic analysis \& EM\\
+%graphics
+%\item
+%Image Classification \\
+%~~Construct new representations using latent semantic analysis \\
+%graphics
+%\end{itemize}
+%\end{enumerate}
+%\begin{footnotesize}
+%Heterogeneous Transfer Learning for Image Clustering via the Social Web cite
+%Heterogeneous Transfer Learning for Image Classification cite
+%\end{footnotesize}
+%\end{frame}
+
+\section{Methods}
+\begin{frame}{Methods}{}
+$$ \hat{y}_t = \sign \Bigg( \sum_{k=1}^{N} \alpha_{t}^{k} \Pi \Big( z_{t}^{k} \Big) + \alpha_t \Pi \Big( z_t \Big) - \frac{1}{2} \Bigg) $$
+$$ \hat{y}_t = \sign \Bigg( \sum_{k=1}^{N} \alpha_{t}^{k} \sign \Big( z_{t}^{k} \Big) + \alpha_t \sign \Big( z_t \Big)  \Bigg) $$
+target domain \& homogeneous source domain: \\
+$$ z_t = \mathbf{w}_{t}^{\top} \mathbf{x}_t, z_{t}^{k} = {\mathbf{v}^{k}}^{\top} \mathbf{x}_t $$
+heterogeneous source domain: \\
+$$ z_{t}^{k} = \sum\limits_{\mathbf{x}^{k} \in D^K} sim(\mathbf{x}^{k}, \mathbf{x}_{t}) y_{i}^{k} $$
+where $sim(\mathbf{x}^{k},\mathbf{x}_{t})$ is calculated by co-occurrence information \cite{ng2012co}, and $D^K$ is the set of K neast neighbors.
+\end{frame}
+
+\begin{frame}{Methods}{Analysis}
+Mistake bound
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[height=2.0in]{a3.jpg}
+\column{.5\textwidth}
+\includegraphics[height=2.0in]{a1.jpg}
+\end{columns}
+\end{frame}
+
+\section{Experiments}
+\begin{frame}{Experiments}{Dataset}
+NUS-WIDE dataset \\
+\begin{itemize}
+\item
+~~Target domain: Image 
+\item
+~~Homogeneous domain: Image
+\item
+~~Heterogeneous domain: Text
+\item
+~~Co-occurrence information: co-occurred image-tag pairs
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Experiments}{Results}
+Online heterogeneous transfer:
+$$T = \{200,300,400,500,600 \}$$
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{5.pdf}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{13.pdf}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Experiments}{Results}
+Online multiple transfer:
+\begin{itemize}
+\item
+Statistically significant but small improvement
+\item
+Similar observation with \cite{zhao2014online}
+\end{itemize}
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{29.pdf}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{10.pdf}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Experiments}{Discussion}
+\begin{itemize}
+\item
+Parameter sensitivity
+\\
+$C ~~ \beta$
+\\
+$ K $
+\item
+Running time
+\\
+HomOTL ~~~ OMT
+\\
+0.02s ~~~ 0.1s
+\end{itemize}
+\end{frame}
+
+\begin{frame}[allowframebreaks]{}
+\scriptsize
+\bibliographystyle{apacite}
+\bibliography{reference}
+\end{frame}
+
+\section{}
+\begin{frame}{}{}
+\begin{center}
+\begin{Huge}
+$ \mathcal{THANK \ YOU}$ \\
+$ \mathcal{FOR} $ \\
+$ \mathcal{YOUR \ ATTENTION!}$ \\
+\end{Huge}
+\end{center}
+\end{frame}
+
+\end{document}
+
+
