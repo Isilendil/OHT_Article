@@ -1,6 +1,7 @@
 \beamer@endinputifotherversion {3.24pt}
 \beamer@sectionintoc {1}{Problem}{2}{0}{1}
 \beamer@sectionintoc {2}{Related Work}{3}{0}{2}
-\beamer@sectionintoc {3}{Methods}{6}{0}{3}
-\beamer@sectionintoc {4}{Theoretical Analysis}{7}{0}{4}
-\beamer@sectionintoc {5}{Experiments}{8}{0}{5}
+\beamer@sectionintoc {3}{Problem Definition}{5}{0}{3}
+\beamer@sectionintoc {4}{Methods}{6}{0}{4}
+\beamer@sectionintoc {5}{Theoretical Analysis}{8}{0}{5}
+\beamer@sectionintoc {6}{Experiments}{11}{0}{6}

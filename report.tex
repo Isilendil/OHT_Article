@@ -15,9 +15,13 @@
 \usepackage{apacite}
 
 \usepackage{graphicx}
+\usepackage{subfigure}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
+\usepackage{amsthm}
+\newtheorem{thm}{Theorem}
+\newtheorem{prop}{Proposition}
 
 %\newcommand{\sign}{\operatorname{sign}}
 \DeclareMathOperator{\sign}{sign}
@@ -25,8 +29,8 @@
 \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
 \renewcommand{\algorithmicensure}{ \textbf{Output:}}
 
-\let\footnotesize\tiny
-\renewcommand{\thefootnote}{}
+%\let\footnotesize\tiny
+%\renewcommand{\thefootnote}{}
 
 %\AtBeginSection[]
 %{
@@ -68,58 +72,198 @@ Heterogeneous source domain:
 $$\mathcal{X} \cap \mathcal{X}^k = \emptyset, \mathcal{Y} = \mathcal{Y}^k$$
 ~~co-occurrence information \cite{ng2012co}
 \end{itemize}
-\begin{footnotesize}
-\footnote{OTL: A Framework of Online Transfer Learning \cite{zhao2010otl}}
-\footnote{Online Transfer Learning \cite{zhao2014online}}
-\end{footnotesize}
+%\begin{footnotesize}
+%\footnote{OTL: A Framework of Online Transfer Learning \cite{zhao2010otl}}
+%\footnote{Online Transfer Learning \cite{zhao2014online}}
+%\end{footnotesize}
 \end{frame}
 
 \section{Related Work}
-\begin{frame}{Related Work}{OTL on homogeneous domain}
-$ \mathcal{X}_s = \mathcal{X} $
+\begin{frame}{Related Work}{Heterogeneous Transfer}
+%Heterogeneous transfer aims to solve a problem in the target domain by leveraging knowledge from other heterogeneous source domains.
+\begin{itemize}
+\item
+Build text features for image \footnote{Building text features for object image classification \cite{wang2009building}}
+\item
+annotation-based probabilistic latent semantic analysis \footnote{Heterogeneous Transfer Learning for Image Clustering via the Social Web \cite{yang2009heterogeneous}}
+\item
+Construct representation for image using common semantic view between image and text data \footnote{Heterogeneous Transfer Learning for Image Classification \cite{zhu2011heterogeneous}}
+\item
+Co-transfer via transition probability \footnote{Co-Transfer Learning via Joint Transition Probability Graph Based Method \cite{ng2012co}} \footnote{Cotransfer Learning Using Coupled Markov Chains with Restart \cite{wu2014co}}
+\end{itemize}
+Above-mentioned studies require prior training data in the source and target domains.
 \\
-Resemble learning strategy: 
-\includegraphics[height=0.35\textwidth]{HomOTL1.png}
-\begin{footnotesize}
-\footnote{Online Transfer Learning \cite{zhao2014online}}
-\end{footnotesize}
+In our problem setting, all the instance in the target domain arrive sequentially.
+%In the problem setting of online heterogeneous transfer learning problem, as all the instance in the target domain arrive sequentially, we do not have enough data for training procedure.
 \end{frame}
 
-
-\begin{frame}{Related Work}{OTL on homogeneous domain}
-\includegraphics[height=0.35\textwidth]{HomOTL2.png}
-\begin{footnotesize}
-\footnote{Online Transfer Learning \cite{zhao2014online}}
-\end{footnotesize}
+\begin{frame}{Related Work}{Online Learning}
+%Online learning deals with a problem that the data instance arrives in a sequential manner.
+%\\
+Only a few works consider transfer learning in an online fashion.
+\begin{itemize}
+\item
+Ensemble learning method for online homogeneous transfer \footnote{OTL: A Framework of Online Transfer Learning \cite{zhao2010otl}} \footnote{Online Transfer Learning \cite{zhao2014online}}
+\item
+Multi-view method for online heterogeneous transfer 
+\end{itemize}
+Zhao et al. assume that the feature space of the source domain is a subset of that of the target domain.
+\\
+In our problem setting, the feature spaces of the source and target domains do not share any common subset (e.g. image and text).
+%\begin{footnotesize}
+%\footnote{Online Transfer Learning \cite{zhao2014online}}
+%\end{footnotesize}
 \end{frame}
 
-\begin{frame}{Related Work}{OTL on heterogeneous domain}
-$ \mathcal{X}_s \subset \mathcal{X} $
-\\
-Multi-view approach:
-\includegraphics[height=0.35\textwidth]{HetOTL.png}
+\section{Problem Definition}
+\begin{frame}{Problem Definition}
+test
 \end{frame}
 
 \section{Methods}
-\begin{frame}{Methods}{}
-$$ \hat{y}_t = \sign \Bigg( \sum_{k=1}^{N} \alpha_{t}^{k} \Pi \Big( z_{t}^{k} \Big) + \alpha_t \Pi \Big( z_t \Big) - \frac{1}{2} \Bigg) $$
-$$ \hat{y}_t = \sign \Bigg( \sum_{k=1}^{N} \alpha_{t}^{k} \sign \Big( z_{t}^{k} \Big) + \alpha_t \sign \Big( z_t \Big)  \Bigg) $$
-target domain \& homogeneous source domain: \\
-$$ z_t = \mathbf{w}_{t}^{\top} \mathbf{x}_t, z_{t}^{k} = {\mathbf{v}^{k}}^{\top} \mathbf{x}_t $$
-heterogeneous source domain: \\
-$$ z_{t}^{k} = \sum\limits_{\mathbf{x}^{k} \in D^K} sim(\mathbf{x}^{k}, \mathbf{x}_{t}) y_{i}^{k} $$
-where $sim(\mathbf{x}^{k},\mathbf{x}_{t})$ is calculated by co-occurrence information \cite{ng2012co}, and $D^K$ is the set of K neast neighbors.
+\begin{frame}{Methods}{Heterogeneous Knowledge Transfer}
+\begin{figure}
+\centering
+\includegraphics[height=0.15\textwidth]{knowledgetransfer.pdf}
+\end{figure}
+Similarity between $\mathbf{x}_t$ and each instance in the heterogeneous source domain
+$$ Sim_t(j) = \sum\limits_i Sim_{t}^{(1)}(i) Sim^{(2)}(i,j) $$
+Weighted $K$ nearest neighbor classifier
+$$ h_{t}^{s}(\mathbf{x}_t) = \sum\limits_{i \in N} \frac{Sim_t(i)}{\sum\limits_{i \in N} Sim_t(i)} y_i $$
+where $N$ is the set of identifiers of $K$ nearest neighbors in the heterogeneous source domain.
+\end{frame}
+
+\begin{frame}{Online Heterogeneous Transfer Algorithms}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\caption{Online Heterogeneous Transfer Algorithm 1 (OHT1)}
+\algsetup{linenosize=\tiny}
+\scriptsize
+\REQUIRE ~~
+aggressiveness parameter $C>0$\\ 
+%~~~~~~~~~discount parameter $\beta \in (0,1)$\\ 
+~~~~~~~~~$\eta = \frac{1}{2}$ \\
+~~~~~~~~~heterogeneous source data
+\ENSURE ~~
+$\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1}^{s} + w_1 = 1$
+\FOR{$t=1$ to $T$}
+\STATE 
+  receive instance: $\mathbf{x}_t \in \mathcal{X}$
+\STATE
+  normalize: $\theta_{t}^{s} = \frac{w_{t}^{s}}{w_{t}^{s}+w_t}, \theta_{t} = \frac{w_{t}}{w_{t}^{s}+w_t}$
+\STATE
+  predict: $\hat{y}_t = \sign \big( \theta_{t}^{s} \varOmega (h_{t}^{s}(\mathbf{x}_t)) + \theta_{t} \varOmega (\mathbf{v}_t \cdot \mathbf{x}_t) - \frac{1}{2} \big)$
+\STATE
+  receive correct label: $y_t \in \mathcal{Y}$
+\STATE
+  compute: 
+    $$w_{t+1}^{s} = w_{t}^{s} \exp \big\{ -\eta \big(\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)\big)^2 \big\} $$
+    $$w_{t+1} = w_{t} \exp \big\{ -\eta \big(\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)\big)^2 \big\} $$
+\STATE
+  suffer loss: $\ell_{t}^{*} = \max \{0, 1-y_t(\mathbf{v}_t \cdot \mathbf{x}_t)\}$
+\STATE
+  set: $\tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2}$
+\STATE
+  update: $ \mathbf{v}_{t+1} = \mathbf{v}_t + \tau_t y_t \mathbf{x}_t $
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+where $\varOmega(z) = \max \{ 0, \min \{ 1, \frac{z+1}{2} \}\}$.
+\end{column}
+\begin{column}{0.5\textwidth}
+\begin{algorithm}[H]
+\begin{algorithmic}[1]
+\caption{Online Heterogeneous Transfer Algorithm 2 (OHT2)}
+\algsetup{linenosize=\tiny}
+\scriptsize
+\REQUIRE ~~
+aggressiveness parameter $C>0$\\ 
+~~~~~~~~~discount parameter $\alpha \in (0,1)$\\ 
+~~~~~~~~~heterogeneous source data 
+\ENSURE ~~
+$\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1}^{s} + w_1 = 1$
+\FOR{$t=1$ to $T$}
+\STATE 
+  receive instance: $\mathbf{x}_t \in \mathcal{X}$
+\STATE
+  normalize: $\theta_{t}^{s} = \frac{w_{t}^{s}}{w_{t}^{s}+w_t}, \theta_{t} = \frac{w_{t}}{w_{t}^{s}+w_t}$
+\STATE
+  predict: $\hat{y}_t = \sign \big( \theta_{t}^{s} \sign (h_{t}^{s}(\mathbf{x}_t)) + \theta_{t} \sign (\mathbf{v}_t \cdot \mathbf{x}_t) \big)$
+\STATE
+  receive correct label: $y_t \in \mathcal{Y}$
+\STATE
+  compute: 
+    $$w_{t+1}^{s} = w_{t+1}^{s} \alpha ^ {I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)}  $$
+    $$w_{t+1} = w_{t+1} \alpha ^ {I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)}  $$
+\STATE
+  suffer loss: $\ell_{t}^{*} = \max \{0, 1-y_t(\mathbf{v}_t \cdot \mathbf{x}_t)\}$
+\STATE
+  set: $\tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2}$
+\STATE
+  update: $ \mathbf{v}_{t+1} = \mathbf{v}_t + \tau_t y_t \mathbf{x}_t $
+\ENDFOR
+\end{algorithmic}
+\end{algorithm}
+Where indication function $I(\cdot)$ represents whether the hypothesis makes a wrong prediction or not.
+\end{column}
+\end{columns}
+The equation of calculation of $\tau$ can be replaced by 
+\begin{columns}
+\begin{column}{0.5\textwidth}
+$\tau_t = \min \{ C, \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2} \} $ 
+\end{column}
+\begin{column}{0.5\textwidth}
+$ \tau_t = \frac{\ell_{t}^{*}}{{\|\mathbf{x}_t\|}^2 + \frac{1}{2C}} $ 
+\end{column}
+\end{columns}
 \end{frame}
 
 \section{Theoretical Analysis}
-\begin{frame}{Methods}{Analysis}
-Mistake bound
-\begin{columns}
-\column{.5\textwidth}
-\includegraphics[height=2.0in]{a3.jpg}
-\column{.5\textwidth}
-\includegraphics[height=2.0in]{a1.jpg}
-\end{columns}
+\begin{frame}{Theoretical Analysis}{$\mathbf{Hedge}(\beta)$ Algorithm}
+At $t$-th trial, $\mathbf{Hedge}(\beta)$ algorithm synthesizes opinions from different experts based on a weight vector $\mathbf{weight}_t$, and updates the weight vector using rule
+$$ weight_{t+1}^{i} = weight_{t}^{i} \cdot \beta^{loss_{t}^{i}} $$
+where $\beta \in [0,1]$ and $loss_{t}^{i} \in [0,1]$.
+
+\begin{tabular}{c|c|c}
+\hline
+\multicolumn{1}{c|}{$\mathbf{Hedge}(\beta)$} &
+\multicolumn{1}{c|}{OHT1} &
+\multicolumn{1}{c|}{OHT2} \\
+\hline
+$loss_{t}^{i}$ & $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$ & $\ell_{t}^{s} = I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)$ \\
+               & $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$ & $\ell_{t} = I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)$ \\
+\hline
+$\beta$        & $\beta = \exp\{-\eta\}$ & $\beta = \alpha$ \\
+\hline
+\end{tabular}
+OHT algorithms obey the rule of $\mathbf{Hedge}(\beta)$ algorithm.
+\end{frame}
+
+\begin{frame}{Theoretical Analysis}{Proposition}
+\begin{prop}
+%Let $\mathbf{L}_t = (\ell_{t}^{s}, \ell_{t})$ be the loss vector at $t$-th trial, and $\mathbf{W}_t = (\mathbf{w}_{t}^{s}, \mathbf{w}_{t})$ be the weight vector at $t$-th trial.
+Given loss $\ell_{t}^{s} \in [0,1]$, $\ell_t \in [0,1]$ and decay factor $\beta \in (0,1)$, for any sequence of loss vectors $\{ (\ell_{t}^{s}, \ell_{t}) | t = 1, 2, \cdots T \} $, we have
+$$ \sum\limits_{t=1}^{T} ( \theta_{t}^{s} \ell_{t}^{s} + \theta_t \ell_t ) \leq \frac{1}{1-\beta} \min \big( \varDelta^s, \varDelta \big) $$
+where
+$ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t}^{s} $ and $ \varDelta = \ln(\frac{1}{w_{1}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t} $
+\end{prop}
+\end{frame}
+
+\begin{frame}{Theoretical Analysis}{Theorem}
+\begin{thm}
+Let $M$ be the number of mistakes made by OHT1 algorithm, then we have 
+$$ M \leq \frac{4}{1-\beta} \min (\varDelta^s, \varDelta) $$
+where
+$ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t}^{s} $ and $ \varDelta = \ln(\frac{1}{w_{1}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t} $.
+\end{thm}
+\begin{thm}
+Let $M$ be the number of mistakes made by OHT2 algorithm, then we have 
+$$ M \leq \frac{2}{1-\beta} \min (\varDelta^s, \varDelta) $$
+where
+$ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t}^{s} $ and $ \varDelta = \ln(\frac{1}{w_{1}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t} $.
+\end{thm}
 \end{frame}
 
 \section{Experiments}
@@ -150,7 +294,7 @@ Number of nearest neighbors \\
 \end{frame}
 
 \begin{frame}{Experiments}{Results}
-\begin{figure*}[!htb]
+\begin{figure}
 \centering
   \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT1-\uppercase\expandafter{\romannumeral2}]
   {
@@ -164,7 +308,7 @@ Number of nearest neighbors \\
   }
   \caption{Average rate of mistakes on all 45 tasks}
   \label{Average rate of mistakes on all 45 tasks}
-\end{figure*}
+\end{figure}
 Observations:
 \begin{itemize}
 \item
@@ -175,7 +319,7 @@ OHT methods generally outperform PA-\uppercase\expandafter{\romannumeral2}.
 \end{frame}
 
 \begin{frame}{Experiments}{Results}
-\begin{figure*}[!htb]
+\begin{figure}
 \centering
   \subfigure[Task 2]
   {
@@ -210,7 +354,7 @@ OHT methods generally outperform PA-\uppercase\expandafter{\romannumeral2}.
   }
   \caption{Online average rate of mistakes on example tasks}
   \label{Online average rate of mistakes on example tasks}
-\end{figure*}
+\end{figure}
 Observations:
 \begin{itemize}
 \item
@@ -238,14 +382,14 @@ OHT2: 40/3
 \end{frame}
 
 \begin{frame}{Experiments}{Parameters and Running Time}
-\begin{figure}[!htb]
+\begin{figure}
 \centering
-  \subfigure
+  \subfigure[]
   {
     \label{average_error}
-    \includegraphics[width=3.9cm]{average_error.pdf}
+    \includegraphics[width=3.5cm]{average_error.pdf}
   }
-  \subfigure
+  \subfigure[]
   {
     \label{average_time}
     \includegraphics[width=3.9cm]{average_time.pdf}
@@ -253,6 +397,26 @@ OHT2: 40/3
   \caption{(a) The average rate of mistakes under varying values of $K$. (b) The average running time of different algorithms when all instances in heterogeneous source are considered.}
   \label{average eok}
 \end{figure}
+\end{frame}
+
+\begin{frame}{Conclusion and Future Works}
+\begin{itemize}
+\item
+We explore online heterogeneous transfer learning problem.
+\item
+We construct a connection across the domains using co-occurrence data, and apply the ensemble strategy to train a classifier.
+\item
+We offer the theoretical analysis of our algorithms.
+\item
+Experimental results show the effectiveness of our algorithms.
+\end{itemize}
+Future works:
+\begin{itemize}
+\item
+applications with other types of data
+\item
+multiple source domains
+\end{itemize}
 \end{frame}
 
 %\begin{frame}[allowframebreaks]{}
