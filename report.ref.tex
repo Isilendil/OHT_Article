@@ -1,5 +1,4 @@
 
-
 \documentclass{beamer}
 \usetheme{Berkeley}
 
@@ -19,14 +18,15 @@
 \usepackage{amssymb}
 \usepackage{amsmath}
 
-%\newcommand{\sign}{\operatorname{sign}}
-\DeclareMathOperator{\sign}{sign}
+\newcommand{\sign}{\operatorname{sign}}
 
 \renewcommand{\algorithmicrequire}{ \textbf{Input:}}
 \renewcommand{\algorithmicensure}{ \textbf{Output:}}
 
 \let\footnotesize\tiny
 \renewcommand{\thefootnote}{}
+
+\newcommand{\sign}{\operatorname{sign}}
 
 %\AtBeginSection[]
 %{
@@ -38,12 +38,12 @@
 
 \begin{document}
 
-\title[OHT]{Online Transfer with Heterogeneous Source}
+\title[OMT]{Online Multi-Transfer with Homogeneous and Heterogeneous Sources}
 \institute[SCUT]{South China University of Technology}
 \author[yanyg]{Yan Yuguang}
 \date{\today}
-\subject{Online Heterogeneous Transfer}
-\keywords{Transfer Learning, Online Transfer, Heterogeneous Transfer}
+\subject{Online Multi-transfer}
+\keywords{Online Transfer, Multi-transfer, Heterogeneous}
 
 \logo{\includegraphics[height=0.35\textwidth]{scut.pdf}}
 
@@ -100,6 +100,41 @@ Multi-view approach:
 \includegraphics[height=0.35\textwidth]{HetOTL.png}
 \end{frame}
 
+%\begin{frame}{Related Work}{Heterogeneous Transfer Learning}
+%\begin{enumerate}
+%\item[1]
+%$ mathcal{Y}_S \neq mathcal{Y}_T $ \\
+%Similarity preserving transformation \\
+%graphics
+%\item[2]
+%$ \mathcal{X}_S \subset \mathcal{X}_T $
+%\end{enumerate}
+%\begin{footnotesize}
+%Predictive Modeling with Heterogeneous Sources cite
+%\end{footnotesize}
+%\end{frame}
+%
+%\begin{frame}{Related Work}{Heterogeneous Transfer Learning}
+%\begin{enumerate}
+%\item[3]
+%$ \mathcal{X}_S \cap \mathcal{X}_T = \emptyset$ 
+%\begin{itemize}
+%\item
+%Image Clustering \\
+%~~Probabilistic latent semantic analysis \& EM\\
+%graphics
+%\item
+%Image Classification \\
+%~~Construct new representations using latent semantic analysis \\
+%graphics
+%\end{itemize}
+%\end{enumerate}
+%\begin{footnotesize}
+%Heterogeneous Transfer Learning for Image Clustering via the Social Web cite
+%Heterogeneous Transfer Learning for Image Classification cite
+%\end{footnotesize}
+%\end{frame}
+
 \section{Methods}
 \begin{frame}{Methods}{}
 $$ \hat{y}_t = \sign \Bigg( \sum_{k=1}^{N} \alpha_{t}^{k} \Pi \Big( z_{t}^{k} \Big) + \alpha_t \Pi \Big( z_t \Big) - \frac{1}{2} \Bigg) $$
@@ -111,7 +146,6 @@ $$ z_{t}^{k} = \sum\limits_{\mathbf{x}^{k} \in D^K} sim(\mathbf{x}^{k}, \mathbf{
 where $sim(\mathbf{x}^{k},\mathbf{x}_{t})$ is calculated by co-occurrence information \cite{ng2012co}, and $D^K$ is the set of K neast neighbors.
 \end{frame}
 
-\section{Theoretical Analysis}
 \begin{frame}{Methods}{Analysis}
 Mistake bound
 \begin{columns}
@@ -129,137 +163,63 @@ NUS-WIDE dataset \\
 \item
 ~~Target domain: Image 
 \item
-~~Heterogeneous source: Text
+~~Homogeneous domain: Image
 \item
-~~Co-occurrence data: co-occurred image-tag pairs
-\end{itemize}
-\end{frame}
-
-\begin{frame}{Experiments}{Baseline Methods}
-\begin{itemize}
+~~Heterogeneous domain: Text
 \item
-Passive-Aggressive algorithms \\
-~~Do not exploit knowledge from the source domain
-\item
-Kernel function \\
-~~Gaussian Kernel
-\item
-Number of nearest neighbors \\
-~~$K$ = 100
+~~Co-occurrence information: co-occurred image-tag pairs
 \end{itemize}
 \end{frame}
 
 \begin{frame}{Experiments}{Results}
-\begin{figure*}[!htb]
-\centering
-  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT1-\uppercase\expandafter{\romannumeral2}]
-  {
-    \label{11}
-    \includegraphics[width=18cm]{12_2.pdf}
-  }
-  \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT2-\uppercase\expandafter{\romannumeral2}]
-  {
-    \label{12}
-    \includegraphics[width=18cm]{22_2.pdf}
-  }
-  \caption{Average rate of mistakes on all 45 tasks}
-  \label{Average rate of mistakes on all 45 tasks}
-\end{figure*}
-Observations:
-\begin{itemize}
-\item
-The mistake rate of PA-\uppercase\expandafter{\romannumeral2} is very high.
-\item
-OHT methods generally outperform PA-\uppercase\expandafter{\romannumeral2}.
-\end{itemize}
+Online heterogeneous transfer:
+$$T = \{200,300,400,500,600 \}$$
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{5.pdf}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{13.pdf}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Experiments}{Results}
-\begin{figure*}[!htb]
-\centering
-  \subfigure[Task 2]
-  {
-    \label{task2}
-    \includegraphics[width=5cm]{task2_2.pdf}
-  }
-  \subfigure[Task 14]
-  {
-    \label{task14}
-    \includegraphics[width=5cm]{task14_2.pdf}
-  }
-  \subfigure[Task 36]
-  {
-    \label{task36}
-    \includegraphics[width=5cm]{task36_2.pdf}
-  }
-  \\
-  \subfigure[Task 7]
-  {
-    \label{task7}
-    \includegraphics[width=5cm]{task7_2.pdf}
-  }
-  \subfigure[Task 16]
-  {
-    \label{task16}
-    \includegraphics[width=5cm]{task16_2.pdf}
-  }
-  \subfigure[Task 33]
-  {
-    \label{task33}
-    \includegraphics[width=5cm]{task33_2.pdf}
-  }
-  \caption{Online average rate of mistakes on example tasks}
-  \label{Online average rate of mistakes on example tasks}
-\end{figure*}
-Observations:
+Online multiple transfer:
 \begin{itemize}
 \item
-OHT algorithms usually achieve better performance at the beginning stage.
+Statistically significant but small improvement
 \item
-On some tasks (e.g., 7, 16 and 33), the mistake rates of all algorithms decrease, but OHT methods always perform better.
+Similar observation with \cite{zhao2014online}
+\end{itemize}
+\begin{columns}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{29.pdf}
+\column{.5\textwidth}
+\includegraphics[height=2.5in]{10.pdf}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Experiments}{Discussion}
+\begin{itemize}
+\item
+Parameter sensitivity
+\\
+$C ~~ \beta$
+\\
+$ K $
+\item
+Running time
+\\
+HomOTL ~~~ OMT
+\\
+0.02s ~~~ 0.1s
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Experiments}{Significant Test}
-Paired $t$-test ($\alpha = 0.01$)
-\begin{itemize}
-\item
-OHT1 vs. PA: 44/0/1
-\item
-OHT2 vs. PA: 42/2/1
-\end{itemize}
-Cohen's $d$ value ( $d > 0.8$ : large promotion, $0.2 < d < 0.8$ : middle promotion)
-\begin{itemize}
-\item
-OHT1: 41/3 
-\item
-OHT2: 40/3
-\end{itemize}
+\begin{frame}[allowframebreaks]{}
+\scriptsize
+\bibliographystyle{apacite}
+\bibliography{reference}
 \end{frame}
-
-\begin{frame}{Experiments}{Parameters and Running Time}
-\begin{figure}[!htb]
-\centering
-  \subfigure
-  {
-    \label{average_error}
-    \includegraphics[width=3.9cm]{average_error.pdf}
-  }
-  \subfigure
-  {
-    \label{average_time}
-    \includegraphics[width=3.9cm]{average_time.pdf}
-  }
-  \caption{(a) The average rate of mistakes under varying values of $K$. (b) The average running time of different algorithms when all instances in heterogeneous source are considered.}
-  \label{average eok}
-\end{figure}
-\end{frame}
-
-%\begin{frame}[allowframebreaks]{}
-%\scriptsize
-%\bibliographystyle{apacite}
-%\bibliography{reference}
-%\end{frame}
 
 \section{}
 \begin{frame}{}{}
