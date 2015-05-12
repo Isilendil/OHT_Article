@@ -1,0 +1,215 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+Ng%
+, Wu%
+\BCBL {}\ \BBA {} Ye%
+}{%
+Ng%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2012}}%
+}]{%
+ng2012co}
+\APACinsertmetastar {%
+ng2012co}%
+\begin{APACrefauthors}%
+Ng, M\BPBI K.%
+, Wu, Q.%
+\BCBL {}\ \BBA {} Ye, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2012}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Co-transfer learning via joint transition probability
+  graph based method} {Co-transfer learning via joint transition probability
+  graph based method}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 1st International Workshop on Cross
+  Domain Knowledge Discovery in Web and Social Network Mining} {Proceedings of
+  the 1st international workshop on cross domain knowledge discovery in web and
+  social network mining}\ (\BPGS\ 1--9).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Qingyao Wu}%
+, Ng%
+\BCBL {}\ \BBA {} {Yunming Ye}%
+}{%
+{Qingyao Wu}%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {{2014}}}%
+}]{%
+wu2014co}
+\APACinsertmetastar {%
+wu2014co}%
+\begin{APACrefauthors}%
+{Qingyao Wu}%
+, Ng, M.%
+\BCBL {}\ \BBA {} {Yunming Ye}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{{2014}}{{July}}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{Cotransfer Learning Using Coupled Markov Chains with
+  Restart}} {{Cotransfer Learning Using Coupled Markov Chains with
+  Restart}}{\BBCQ}\ [{Journal Paper}].
+\newblock
+\APACjournalVolNumPages{{IEEE Intelligent Systems}}{{29}}{}{{26-33}}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Wang%
+, Hoiem%
+\BCBL {}\ \BBA {} Forsyth%
+}{%
+Wang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+wang2009building}
+\APACinsertmetastar {%
+wang2009building}%
+\begin{APACrefauthors}%
+Wang, G.%
+, Hoiem, D.%
+\BCBL {}\ \BBA {} Forsyth, D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Building text features for object image classification}
+  {Building text features for object image classification}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Computer Vision and Pattern Recognition, 2009. CVPR
+  2009. IEEE Conference on} {Computer vision and pattern recognition, 2009.
+  cvpr 2009. ieee conference on}\ (\BPGS\ 1367--1374).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yang%
+, Chen%
+, Xue%
+, Dai%
+\BCBL {}\ \BBA {} Yu%
+}{%
+Yang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2009}}%
+}]{%
+yang2009heterogeneous}
+\APACinsertmetastar {%
+yang2009heterogeneous}%
+\begin{APACrefauthors}%
+Yang, Q.%
+, Chen, Y.%
+, Xue, G\BHBI R.%
+, Dai, W.%
+\BCBL {}\ \BBA {} Yu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2009}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous transfer learning for image clustering via
+  the social web} {Heterogeneous transfer learning for image clustering via the
+  social web}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the Joint Conference of the 47th Annual
+  Meeting of the ACL and the 4th International Joint Conference on Natural
+  Language Processing of the AFNLP: Volume 1-Volume 1} {Proceedings of the
+  joint conference of the 47th annual meeting of the acl and the 4th
+  international joint conference on natural language processing of the afnlp:
+  Volume 1-volume 1}\ (\BPGS\ 1--9).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhao%
+\ \BBA {} Hoi%
+}{%
+Zhao%
+\ \BBA {} Hoi%
+}{%
+{\protect \APACyear {2010}}%
+}]{%
+zhao2010otl}
+\APACinsertmetastar {%
+zhao2010otl}%
+\begin{APACrefauthors}%
+Zhao, P.%
+\BCBT {}\ \BBA {} Hoi, S\BPBI C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2010}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {OTL: A framework of online transfer learning} {Otl: A
+  framework of online transfer learning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 27th International Conference on
+  Machine Learning (ICML-10)} {Proceedings of the 27th international conference
+  on machine learning (icml-10)}\ (\BPGS\ 1231--1238).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhao%
+, Hoi%
+, Wang%
+\BCBL {}\ \BBA {} Li%
+}{%
+Zhao%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2014}}%
+}]{%
+zhao2014online}
+\APACinsertmetastar {%
+zhao2014online}%
+\begin{APACrefauthors}%
+Zhao, P.%
+, Hoi, S\BPBI C.%
+, Wang, J.%
+\BCBL {}\ \BBA {} Li, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Online Transfer Learning} {Online transfer
+  learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Artificial Intelligence}{216}{}{76--102}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhu%
+\ \protect \BOthers {.}}{%
+Zhu%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+zhu2011heterogeneous}
+\APACinsertmetastar {%
+zhu2011heterogeneous}%
+\begin{APACrefauthors}%
+Zhu, Y.%
+, Chen, Y.%
+, Lu, Z.%
+, Pan, S\BPBI J.%
+, Xue, G\BHBI R.%
+, Yu, Y.%
+\BCBL {}\ \BBA {} Yang, Q.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Heterogeneous Transfer Learning for Image
+  Classification.} {Heterogeneous transfer learning for image
+  classification.}{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {AAAI.} {Aaai.}
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}

@@ -426,6 +426,17 @@ $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=
 The theorem follows immediately.
 \end{proof}
 
+A recommended value is given by following theorem.
+
+\begin{thm}
+When 
+$$ \beta = \frac{\sqrt{T}}{\sqrt{T} + \sqrt{2 \max (\ln(\frac{1}{w_{1}^{s}}), \ln(\frac{1}{w_1}))}} $$
+We have 
+$$ M \leq 2 \min (\varLambda^s, \varLambda) + \sqrt{2T \max (\ln(\frac{1}{w_{1}^{s}}), \ln(\frac{1}{w_1}))} $$
+where $\varLambda^s = \sum\limits_{t=1}^{T}\ell_{t}^{s} + \ln(\frac{1}{w_{1}^{s}})$ and $\varLambda = \sum\limits_{t=1}^{T}\ell_{t} + \ln(\frac{1}{w_1})$.
+\end{thm}
+
+Theorem 3 can be proved by similar technique in \cite{1997decisionFreund}.
 
 \section{Experimental Results}
 
@@ -572,9 +583,9 @@ We observe that the performance of the proposed methods consistently outperform 
 All the experiments are run in Matlab over a Linux machine with 3.2 GHz CPU and 3.8 GB memory.
 Compared to PA algorithm without exploiting any information from the source domain, OHT algorithms are less efficient.
 Despite the extra computation for updating weights, the main reason of more running time for OHT algorithms is probably the searching process for the nearest neighbors.
-We can simply make use of all instances in the heterogeneous source domain to get rid of overhead for searching nearest neighbors.
+We can make use of global nearest neighbor approach in the heterogeneous source domain to get rid of overhead for searching nearest neighbors.
 Figure \ref{average_time} shows the running time of different algorithms when all instances in the heterogeneous source domain are considered.
-We obtain generally comparable running time to PA, and at the same time, achieve better performance than PA.
+We obtain generally comparable running time to PA, and at the same time, achieve a better performance than PA.
 
 \section{Conclusion}
 
