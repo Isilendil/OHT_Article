@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.11)  13 MAY 2015 15:04
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.11)  13 MAY 2015 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -344,24 +344,29 @@ Package: amsthm 2004/08/06 v2.20
 \c@prop=\count127
 \c@defn=\count128
 
-No file OHT.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+) (./OHT.aux)
 \openout1 = `OHT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 71.
+LaTeX Font Info:    ... okay on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 71.
+
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -381,7 +386,7 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \makeMPintoPDFobject=\count134
 \everyMPtoPDFconversion=\toks31
 )
-Package hyperref Info: Link coloring OFF on input line 70.
+Package hyperref Info: Link coloring OFF on input line 71.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -390,9 +395,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count135
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
+LaTeX Info: Redefining \ref on input line 71.
+LaTeX Info: Redefining \pageref on input line 71.
+LaTeX Info: Redefining \nameref on input line 71.
+
+(./OHT.out) (./OHT.out)
 \@outlinefile=\write3
 \openout3 = `OHT.out'.
 
@@ -413,343 +420,156 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Try loading font information for U+msa on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+LaTeX Font Info:    Try loading font information for U+msa on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 73.
+LaTeX Font Info:    Try loading font information for U+msb on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 73.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 73.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 74.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 74.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 75.
 
-
-LaTeX Warning: Citation `pan2010survey' on page 1 undefined on input line 90.
-
-
-LaTeX Warning: Citation `liao2005logistic' on page 1 undefined on input line 92
-.
-
-
-LaTeX Warning: Citation `dai2007boosting' on page 1 undefined on input line 92.
-
-
-
-LaTeX Warning: Citation `dai2007transferring' on page 1 undefined on input line
- 92.
-
-
-LaTeX Warning: Citation `eaton2011selective' on page 1 undefined on input line 
-92.
-
-<problem.pdf, id=4, 723.70375pt x 259.97125pt>
+<problem.pdf, id=75, 723.70375pt x 259.97125pt>
 File: problem.pdf Graphic file (type pdf)
  <use problem.pdf>
-Package pdftex.def Info: problem.pdf used on input line 99.
-(pdftex.def)             Requested size: 227.62204pt x 81.7684pt.
+Package pdftex.def Info: problem.pdf used on input line 100.
+(pdftex.def)             Requested size: 317.9892pt x 114.22902pt.
 
-
-LaTeX Warning: Reference `problem' on page 1 undefined on input line 108.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
-s been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.114 
-       <./problem.pdf>]
-! Undefined control sequence.
-l.140 \citeauthor
-                 {wei2011heterogeneous}\shortcite{wei2011heterogeneous} appl...
-
-? 
-! Undefined control sequence.
-l.140 \citeauthor{wei2011heterogeneous}\shortcite
-                                                 {wei2011heterogeneous} appl...
-
-? 
-
-LaTeX Warning: Citation `zhou2014hybrid' on page 2 undefined on input line 141.
-
-
-! Undefined control sequence.
-l.143 \citeauthor
-                 {yang2009heterogeneous}\shortcite{yang2009heterogeneous} le...
-
-? 
-! Undefined control sequence.
-l.143 \citeauthor{yang2009heterogeneous}\shortcite
-                                                  {yang2009heterogeneous} le...
-
-? 
-! Undefined control sequence.
-l.143 ...ata for image clustering, and \citeauthor
-                                                  {zhu2011heterogeneous}\sho...
-
-? 
-! Undefined control sequence.
-l.143 ...iteauthor{zhu2011heterogeneous}\shortcite
-                                                  {zhu2011heterogeneous} uti...
-
-? 
-! Undefined control sequence.
-l.144 \citeauthor
-                 {wang2009building}\shortcite{wang2009building} proposed a a...
-
-? 
-! Undefined control sequence.
-l.144 \citeauthor{wang2009building}\shortcite
-                                             {wang2009building} proposed a a...
-
-? 
-
-LaTeX Warning: Citation `ng2012co' on page 2 undefined on input line 145.
-
-
-LaTeX Warning: Citation `wu2014co' on page 2 undefined on input line 145.
-
-
-LaTeX Warning: Citation `tan2014mixed' on page 2 undefined on input line 145.
-
-
-LaTeX Warning: Citation `zhu2011heterogeneous' on page 2 undefined on input lin
-e 148.
-
-
-LaTeX Warning: Citation `ng2012co' on page 2 undefined on input line 149.
-
-
-LaTeX Warning: Citation `wu2014co' on page 2 undefined on input line 149.
-
-
-LaTeX Warning: Citation `1958perceptronRosenblatt' on page 2 undefined on input
- line 157.
-
-
-LaTeX Warning: Citation `2006onlineCrammer' on page 2 undefined on input line 1
-58.
-
-
-Underfull \vbox (badness 3942) has occurred while \output is active []
-
- [2]
-
-LaTeX Warning: Citation `zhao2010otl' on page 3 undefined on input line 161.
-
-
-LaTeX Warning: Citation `zhao2014online' on page 3 undefined on input line 161.
-
-
-
-LaTeX Warning: Citation `zhao2010otl' on page 3 undefined on input line 162.
-
-
-LaTeX Warning: Citation `zhao2014online' on page 3 undefined on input line 162.
-
-
-<knowledgetransfer.pdf, id=36, 538.01pt x 429.605pt>
-File: knowledgetransfer.pdf Graphic file (type pdf)
-
-<use knowledgetransfer.pdf>
-Package pdftex.def Info: knowledgetransfer.pdf used on input line 200.
-(pdftex.def)             Requested size: 227.62204pt x 181.75702pt.
-
-Underfull \vbox (badness 5231) has occurred while \output is active []
-
- [3]
-
-LaTeX Warning: Reference `knowledgetransfer' on page 4 undefined on input line 
-213.
-
-
-LaTeX Warning: Citation `2006onlineCrammer' on page 4 undefined on input line 2
-26.
-
-
-LaTeX Warning: Citation `2006predictionCesa' on page 4 undefined on input line 
-235.
-
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.236 
-       <./knowledgetransfer.pdf>]
-
-LaTeX Warning: Citation `2006onlineCrammer' on page 5 undefined on input line 2
-38.
-
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
-put line 244.
-[5]
-
-LaTeX Warning: Citation `1997decisionFreund' on page 6 undefined on input line 
-354.
-
-[6] [7]
-
-LaTeX Warning: Citation `1997decisionFreund' on page 8 undefined on input line 
-460.
-
-
-LaTeX Warning: Citation `nus-wide-civr09' on page 8 undefined on input line 470
-.
-
-
-LaTeX Warning: Citation `2006onlineCrammer' on page 8 undefined on input line 4
-83.
-
-<12_2.pdf, id=104, 1154.3125pt x 263.98625pt>
-File: 12_2.pdf Graphic file (type pdf)
- <use 12_2.pdf>
-Package pdftex.def Info: 12_2.pdf used on input line 501.
-(pdftex.def)             Requested size: 512.1496pt x 117.1291pt.
-
-<22_2.pdf, id=105, 1154.3125pt x 261.97874pt>
-File: 22_2.pdf Graphic file (type pdf)
- <use 22_2.pdf>
-Package pdftex.def Info: 22_2.pdf used on input line 506.
-(pdftex.def)             Requested size: 512.1496pt x 116.23839pt.
-
-Overfull \hbox (119.66461pt too wide) in paragraph at lines 501--507
- [][] 
- []
-
-
-Overfull \hbox (119.66461pt too wide) in paragraph at lines 501--507
- [][] 
- []
-
-
-LaTeX Warning: Reference `Average rate of mistakes on all 45 tasks' on page 8 u
-ndefined on input line 511.
-
-[8] <task2_2.pdf, id=115, 421.575pt x 316.18124pt>
-File: task2_2.pdf Graphic file (type pdf)
- <use task2_2.pdf>
-Package pdftex.def Info: task2_2.pdf used on input line 526.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-<task14_2.pdf, id=116, 421.575pt x 316.18124pt>
-File: task14_2.pdf Graphic file (type pdf)
- <use task14_2.pdf>
-Package pdftex.def Info: task14_2.pdf used on input line 531.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-<task36_2.pdf, id=117, 421.575pt x 316.18124pt>
-File: task36_2.pdf Graphic file (type pdf)
- <use task36_2.pdf>
-Package pdftex.def Info: task36_2.pdf used on input line 536.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-<task7_2.pdf, id=118, 421.575pt x 316.18124pt>
-File: task7_2.pdf Graphic file (type pdf)
- <use task7_2.pdf>
-Package pdftex.def Info: task7_2.pdf used on input line 542.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-<task16_2.pdf, id=119, 421.575pt x 316.18124pt>
-File: task16_2.pdf Graphic file (type pdf)
- <use task16_2.pdf>
-Package pdftex.def Info: task16_2.pdf used on input line 547.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-<task33_2.pdf, id=120, 421.575pt x 316.18124pt>
-File: task33_2.pdf Graphic file (type pdf)
- <use task33_2.pdf>
-Package pdftex.def Info: task33_2.pdf used on input line 552.
-(pdftex.def)             Requested size: 142.26378pt x 106.69933pt.
-
-
-LaTeX Warning: Reference `Online average rate of mistakes on example tasks' on 
-page 9 undefined on input line 557.
-
-
-LaTeX Warning: Reference `average_error' on page 9 undefined on input line 581.
-
-
-<average_error.pdf, id=121, 543.02875pt x 450.68375pt>
-File: average_error.pdf Graphic file (type pdf)
- <use average_error.pdf>
-Package pdftex.def Info: average_error.pdf used on input line 592.
-(pdftex.def)             Requested size: 99.58464pt x 82.64622pt.
-
-<average_time.pdf, id=122, 459.7175pt x 340.27126pt>
-File: average_time.pdf Graphic file (type pdf)
- <use average_time.pdf>
-Package pdftex.def Info: average_time.pdf used on input line 597.
-(pdftex.def)             Requested size: 110.96556pt x 82.13405pt.
-
-[9pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
-has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.600 \end{figure}
-                   <./12_2.pdf> <./22_2.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10pdfTeX warning (ext4): destination with the same identifier (name{figure.4}
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+] [2pdfTeX warning (ext4): destination with the same identifier (name{figure.1}
 ) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.601 
-       <./task2_2.pdf> <./task14_2.pdf> <./task36_2.pdf> <./task7_2.pdf> <./tas
-k16_2.pdf> <./task33_2.pdf>]
+l.147 
+       <./problem.pdf>] [3]
+<knowledgetransfer.pdf, id=144, 538.01pt x 429.605pt>
+File: knowledgetransfer.pdf Graphic file (type pdf)
 
-LaTeX Warning: Reference `average_time' on page 11 undefined on input line 608.
-
-
-No file OHT.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 622.
-[11pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+<use knowledgetransfer.pdf>
+Package pdftex.def Info: knowledgetransfer.pdf used on input line 201.
+(pdftex.def)             Requested size: 317.9892pt x 253.91705pt.
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.622 \end{document}
-                     <./average_error.pdf> <./average_time.pdf>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 622.
+l.220 ...)}{\sum\limits_{i \in N} Sim_t(i)} y_i $$
+                                                   <./knowledgetransfer.pdf>]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
+put line 245.
+
+[5] [6] [7] [8] <12_2.pdf, id=213, 1154.3125pt x 263.98625pt>
+File: 12_2.pdf Graphic file (type pdf)
+ <use 12_2.pdf>
+Package pdftex.def Info: 12_2.pdf used on input line 502.
+(pdftex.def)             Requested size: 317.9892pt x 72.72331pt.
+
+<22_2.pdf, id=214, 1154.3125pt x 261.97874pt>
+File: 22_2.pdf Graphic file (type pdf)
+ <use 22_2.pdf>
+Package pdftex.def Info: 22_2.pdf used on input line 507.
+(pdftex.def)             Requested size: 317.9892pt x 72.17029pt.
+
+<task2_2.pdf, id=216, 421.575pt x 316.18124pt>
+File: task2_2.pdf Graphic file (type pdf)
+ <use task2_2.pdf>
+Package pdftex.def Info: task2_2.pdf used on input line 527.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+
+<task14_2.pdf, id=217, 421.575pt x 316.18124pt>
+File: task14_2.pdf Graphic file (type pdf)
+ <use task14_2.pdf>
+Package pdftex.def Info: task14_2.pdf used on input line 532.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+
+<task36_2.pdf, id=218, 421.575pt x 316.18124pt>
+File: task36_2.pdf Graphic file (type pdf)
+ <use task36_2.pdf>
+Package pdftex.def Info: task36_2.pdf used on input line 537.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+
+<task7_2.pdf, id=219, 421.575pt x 316.18124pt>
+File: task7_2.pdf Graphic file (type pdf)
+ <use task7_2.pdf>
+Package pdftex.def Info: task7_2.pdf used on input line 543.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+
+<task16_2.pdf, id=220, 421.575pt x 316.18124pt>
+File: task16_2.pdf Graphic file (type pdf)
+ <use task16_2.pdf>
+Package pdftex.def Info: task16_2.pdf used on input line 548.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+
+<task33_2.pdf, id=221, 421.575pt x 316.18124pt>
+File: task33_2.pdf Graphic file (type pdf)
+ <use task33_2.pdf>
+Package pdftex.def Info: task33_2.pdf used on input line 553.
+(pdftex.def)             Requested size: 119.2467pt x 89.43233pt.
+ [9pdfTeX warning (ext4): destination with the same identifier (name{figure.3})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.585 
+       <./12_2.pdf> <./22_2.pdf>]
+<average_error.pdf, id=242, 543.02875pt x 450.68375pt>
+File: average_error.pdf Graphic file (type pdf)
+ <use average_error.pdf>
+Package pdftex.def Info: average_error.pdf used on input line 593.
+(pdftex.def)             Requested size: 158.99156pt x 131.9534pt.
+
+<average_time.pdf, id=243, 544.0325pt x 450.68375pt>
+File: average_time.pdf Graphic file (type pdf)
+ <use average_time.pdf>
+Package pdftex.def Info: average_time.pdf used on input line 598.
+(pdftex.def)             Requested size: 158.99156pt x 131.7127pt.
+
+[10pdfTeX warning (ext4): destination with the same identifier (name{figure.4})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.612 \section
+              {Conclusion}pdfTeX warning (ext4): destination with the same iden
+tifier (name{figure.5}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.612 \section
+              {Conclusion} <./task2_2.pdf> <./task14_2.pdf> <./task36_2.pdf> <.
+/task7_2.pdf> <./task16_2.pdf> <./task33_2.pdf> <./average_error.pdf> <./averag
+e_time.pdf>] (./OHT.bbl [11])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 623.
+ [12]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 623.
  (./OHT.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 622.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 622.
-
-
-Package rerunfilecheck Warning: File `OHT.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `OHT.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  FBACEF6024AFF0EEE38F3B90F0577C3B;1092.
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 622.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 623.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 623.
+Package rerunfilecheck Info: File `OHT.out' has not changed.
+(rerunfilecheck)             Checksum: FBACEF6024AFF0EEE38F3B90F0577C3B;1092.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 623.
  ) 
 Here is how much of TeX's memory you used:
- 7255 strings out of 493304
- 101752 string characters out of 6139871
- 202855 words of memory out of 5000000
- 10528 multiletter control sequences out of 15000+600000
+ 7396 strings out of 493304
+ 103676 string characters out of 6139871
+ 204976 words of memory out of 5000000
+ 10636 multiletter control sequences out of 15000+600000
  19175 words of font info for 43 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,19n,39p,342b,442s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -770,10 +590,10 @@ xmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/font
 s/type1/urw/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
 times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on OHT.pdf (11 pages, 303243 bytes).
+Output written on OHT.pdf (12 pages, 316407 bytes).
 PDF statistics:
- 278 PDF objects out of 1000 (max. 8388607)
- 218 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 393 PDF objects out of 1000 (max. 8388607)
+ 331 compressed objects within 4 object streams
+ 94 named destinations out of 1000 (max. 500000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

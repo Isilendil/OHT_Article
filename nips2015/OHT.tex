@@ -9,25 +9,25 @@
 
 
 \author{
-Coauthor \\
-Affiliation \\
-Address \\
-\texttt{email} \\
+author1 \\
+Affiliation1 \\
+Address1 \\
+\texttt{email1} \\
 \AND
-Coauthor \\
-Affiliation \\
-Address \\
-\texttt{email} \\
+author2 \\
+Affiliation2 \\
+Address2 \\
+\texttt{email2} \\
 \And
-Coauthor \\
-Affiliation \\
-Address \\
-\texttt{email} \\
+author3 \\
+Affiliation3 \\
+Address3 \\
+\texttt{email3} \\
 \And
-Coauthor \\
-Affiliation \\
-Address \\
-\texttt{email} \\
+author4 \\
+Affiliation4 \\
+Address4 \\
+\texttt{email4} \\
 (if needed)\\
 }
 
@@ -66,6 +66,7 @@ Address \\
 %\newcommand{\vector}{\mathbf}
 \DeclareMathOperator{\sign}{sign}
 
+\usepackage{cite}
 
  \begin{document}
 
@@ -96,7 +97,7 @@ Heterogeneous transfer addresses the situation that either the feature spaces or
 %\begin{figure}[!htb]
 \begin{figure}[H]
 \centering
-  \includegraphics[width=8cm]{problem.pdf}
+  \includegraphics[width=0.8\linewidth]{problem.pdf}
   \label{problem}
   \caption{The illustration of online heterogeneous transfer learning problem}
 \end{figure}
@@ -137,11 +138,11 @@ In this section, we review some related studies and discuss the differences betw
 
 \subsection{Heterogeneous transfer learning}
 The objective of heterogeneous transfer learning is to solve a problem in the target domain by leveraging knowledge extracted from other heterogeneous source domains with different feature space.
-\citeauthor{wei2011heterogeneous}\shortcite{wei2011heterogeneous} applied restricted Boltzmann machine to perform heterogeneous transfer learning task.
+Wei and Pal \cite{wei2011heterogeneous} applied restricted Boltzmann machine to perform heterogeneous transfer learning task.
 And deep learning technique is introduced into heterogeneous transfer in \cite{zhou2014hybrid}.
 There are also some existing works studying heterogeneous transfer using co-occurrence data.
-\citeauthor{yang2009heterogeneous}\shortcite{yang2009heterogeneous} leveraged text data for image clustering, and \citeauthor{zhu2011heterogeneous}\shortcite{zhu2011heterogeneous} utilized text data for image classification task.
-\citeauthor{wang2009building}\shortcite{wang2009building} proposed a algorithm to build two separate classifiers based on text features and image features, and then the final classifier is trained to combine them.
+Yang et al. \cite{yang2009heterogeneous} leveraged text data for image clustering, and Zhu et al. \cite{zhu2011heterogeneous} utilized text data for image classification task.
+Wang, Hoiem, and Forsyth \cite{wang2009building} proposed a algorithm to build two separate classifiers based on text features and image features, and then the final classifier is trained to combine them.
 And in \cite{ng2012co,wu2014co,tan2014mixed} transition probabilities based on co-occurrence information is used to deal with classification task.
 
 However, above-mentioned studies require training data in the source and target domains.
@@ -197,7 +198,7 @@ When $\mathcal{X}$ is the feature space of English document and $\mathcal{X}^s$ 
 %\begin{figure}[!htb]
 \begin{figure}[H]
 \centering
-  \includegraphics[width=8cm]{knowledgetransfer.pdf}
+  \includegraphics[width=0.8\linewidth]{knowledgetransfer.pdf}
   \label{knowledgetransfer}
   \caption{The illustration of our approach for heterogeneous knowledge transfer}
 \end{figure}
@@ -497,12 +498,12 @@ Sensitivity of parameters will be examined in subsequent sections.
   \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT1-\uppercase\expandafter{\romannumeral2}]
   {
     \label{11}
-    \includegraphics[width=18cm]{12_2.pdf}
+    \includegraphics[width=0.8\linewidth]{12_2.pdf}
   }
   \subfigure[PA-\uppercase\expandafter{\romannumeral2} vs. OHT2-\uppercase\expandafter{\romannumeral2}]
   {
     \label{12}
-    \includegraphics[width=18cm]{22_2.pdf}
+    \includegraphics[width=0.8\linewidth]{22_2.pdf}
   }
   \caption{Average rate of mistakes on all 45 tasks}
   \label{Average rate of mistakes on all 45 tasks}
@@ -522,33 +523,33 @@ In order to facilitate the description, we denote PA-\uppercase\expandafter{\rom
   \subfigure[Task 2]
   {
     \label{task2}
-    \includegraphics[width=5cm]{task2_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task2_2.pdf}
   }
   \subfigure[Task 14]
   {
     \label{task14}
-    \includegraphics[width=5cm]{task14_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task14_2.pdf}
   }
   \subfigure[Task 36]
   {
     \label{task36}
-    \includegraphics[width=5cm]{task36_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task36_2.pdf}
   }
   \\
   \subfigure[Task 7]
   {
     \label{task7}
-    \includegraphics[width=5cm]{task7_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task7_2.pdf}
   }
   \subfigure[Task 16]
   {
     \label{task16}
-    \includegraphics[width=5cm]{task16_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task16_2.pdf}
   }
   \subfigure[Task 33]
   {
     \label{task33}
-    \includegraphics[width=5cm]{task33_2.pdf}
+    \includegraphics[width=0.3\linewidth]{task33_2.pdf}
   }
   \caption{Online average rate of mistakes on example tasks}
   \label{Online average rate of mistakes on example tasks}
@@ -588,12 +589,12 @@ We observe that the performance of the proposed methods consistently outperform 
   \subfigure[]
   {
     \label{average_error}
-    \includegraphics[width=3.5cm]{average_error.pdf}
+    \includegraphics[width=0.4\linewidth]{average_error.pdf}
   }
   \subfigure[]
   {
     \label{average_time}
-    \includegraphics[width=3.9cm]{average_time.pdf}
+    \includegraphics[width=0.4\linewidth]{average_time.pdf}
   }
   \caption{(a) The average rate of mistakes under varying values of $K$. (b) The average running time of different algorithms when all instances in heterogeneous source are considered.}
   \label{average eok}
@@ -616,7 +617,7 @@ We also offer the theoretical analysis of our algorithms.
 Experimental results show that the proposed algorithms outperform the baseline methods.
 In the future, we will consider the applications with other types of data, or the scenario which includes more than one source domains.
 
-\bibliographystyle{aaai}
+\bibliographystyle{unsrt}
 \bibliography{transferlearning,onlinelearning,dataset}
 
 \end{document}
