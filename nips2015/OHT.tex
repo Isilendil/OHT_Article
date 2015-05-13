@@ -1,10 +1,48 @@
-\def\year{2015}
-%File: formatting-instruction.tex
-\documentclass[letterpaper]{article}
-\usepackage{aaai}
-\usepackage{times}
-\usepackage{helvet}
-\usepackage{courier}
+\documentclass{article} % For LaTeX2e
+\usepackage{nips15submit_e,times}
+\usepackage{hyperref}
+\usepackage{url}
+%\documentstyle[nips14submit_09,times,art10]{article} % For LaTeX 2.09
+
+
+\title{Online Transfer Learning with Heterogeneous Source}
+
+
+\author{
+Coauthor \\
+Affiliation \\
+Address \\
+\texttt{email} \\
+\AND
+Coauthor \\
+Affiliation \\
+Address \\
+\texttt{email} \\
+\And
+Coauthor \\
+Affiliation \\
+Address \\
+\texttt{email} \\
+\And
+Coauthor \\
+Affiliation \\
+Address \\
+\texttt{email} \\
+(if needed)\\
+}
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to \LaTeX{} to determine where to break
+% the lines. Using \AND forces a linebreak at that point. So, if \LaTeX{}
+% puts 3 of 4 authors names on the first line, and the last on the second
+% line, try using \AND instead of \And before the third author name.
+
+\newcommand{\fix}{\marginpar{FIX}}
+\newcommand{\new}{\marginpar{NEW}}
+
+%\nipsfinalcopy % Uncomment for camera-ready version
 
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -29,27 +67,11 @@
 \DeclareMathOperator{\sign}{sign}
 
 
-\frenchspacing
-\setlength{\pdfpagewidth}{8.5in}
-\setlength{\pdfpageheight}{11in}
-\pdfinfo{
-/Title (Online Transfer Learning with Heterogeneous Source)
-/Author (Author1, Author2, Author3)
-/Keywords (Transfer Learning, Heterogeneous Transfer, Online Learning)
-}
-\setcounter{secnumdepth}{0}  
  \begin{document}
-% The file aaai.sty is the style file for AAAI Press 
-% proceedings, working notes, and technical reports.
-%
-\title{Online Transfer Learning with Heterogeneous Source}
-\author{Author1\\ Address line\\
-\And Author2 \\ Address line\\
-\And Author3 \\ Address line\\
-}
+
 \maketitle
+
 \begin{abstract}
-%\begin{quote}
 Heterogeneous transfer learning aims to build the model in the target domain by leveraging knowledge extracted from other heterogeneous source domains.
 In this paper, we investigate online heterogeneous transfer learning problem, which considers a classification task on the target domain in an online fashion.
 The motivation of our work is to utilize data in the heterogeneous source domain to promote the ability of classifier.
@@ -62,7 +84,6 @@ By combining with the hypothesis trained in the target domain, we obtain the ens
 We also theoretically analyze the mistake bound of our proposed algorithms under the $\mathbf{Hedge(\beta)}$ framework.
 The experiments are conducted for image classification by exploiting the knowledge learnt from the text data.
 Encouraging results demonstrate the effectiveness of our algorithms.
-%\end{quote}
 \end{abstract}
 
 \section{Introduction}
@@ -109,12 +130,12 @@ The experiments are conducted for image classification by taking advantage of kn
 We make use of NUS-WIDE dataset to generate binary classification tasks.
 Experimental results show that our algorithms outperform the baseline methods.
 
-\section{Related Work}
+\section{Related work}
 
 The topics that our work is related to are mainly heterogeneous transfer learning and online learning.
 In this section, we review some related studies and discuss the differences between our work and the existing works.
 
-\subsection{Heterogeneous Transfer Learning}
+\subsection{Heterogeneous transfer learning}
 The objective of heterogeneous transfer learning is to solve a problem in the target domain by leveraging knowledge extracted from other heterogeneous source domains with different feature space.
 \citeauthor{wei2011heterogeneous}\shortcite{wei2011heterogeneous} applied restricted Boltzmann machine to perform heterogeneous transfer learning task.
 And deep learning technique is introduced into heterogeneous transfer in \cite{zhou2014hybrid}.
@@ -129,7 +150,7 @@ And the transition probabilities matrix used in \cite{ng2012co,wu2014co} also ne
 In our problem setting, since all the data instance in the target domain arrive sequentially, we do not have enough data for training process.
 To deal with this problem, we adopt a lazy classification algorithm using heterogeneous data without batch training procedure.
 
-\subsection{Online Learning}
+\subsection{Online learning}
 Online learning has been actively studied for many years.
 Unlike the offline machine learning problem where training data are given first, online learning learner receives data instances sequentially.
 An online learning learner make a prediction immediately and adjust itself during the process of the task.
@@ -142,7 +163,7 @@ Nevertheless, the multi-view approach for online heterogeneous transfer in \cite
 Instead, we consider a situation that the feature spaces of the source and target domains do not share any common subset.
 Co-occurrence data are used to help us transfer knowledge from the heterogeneous source domain to the target domain.
 
-\section{Problem Definition}
+\section{Problem definition}
 Suppose that we are given some instances $\{\mathbf{x}_{i}^{s}, y_{i}^{s}\}_{i=1}^{n^s}$ in the source data space $\mathcal{X}^{s} \times \mathcal{Y}^{s}$, where $\mathcal{X}^{s} = \mathbb{R}^{d^s}$ and $\mathcal{Y}^{s} = \{+1,-1\}$.
 The objective of online heterogeneous transfer is to learn a prediction function $f(\mathbf{x}_{t})$ to classify the instance on the target domain in an online fashion.
 The data space of the target domain is $\mathcal{X} \times \mathcal{Y}$, where $\mathcal{X} = \mathbb{R}^{d}$ and $\mathcal{Y} = \{+1,-1\}$.
@@ -160,7 +181,7 @@ In this section, we describe the details of our proposed algorithms.
 We first introduce our approach of how to establish relationship between two different domains to build classifier using heterogeneous source data.
 Then we present online heterogeneous transfer learning algorithms.
 
-\subsection{Heterogeneous Knowledge Transfer}
+\subsection{Heterogeneous knowledge transfer}
 In order to transfer knowledge in the heterogeneous source to the target domain, we construct a connection between two domains, and then design a hypothesis to make prediction using auxiliary data in the heterogeneous source domain.
 
 Our idea is to bridge two domains via their co-occurrence information.
@@ -198,7 +219,7 @@ Based on $Sim_t$, we predict the class label of instance $\mathbf{x}_t$ by weigh
 $$ h_{t}^{s}(\mathbf{x}_t) = \sum\limits_{i \in N} \frac{Sim_t(i)}{\sum\limits_{i \in N} Sim_t(i)} y_i $$
 where $N$ is the set of identifiers of $K$ nearest neighbors in the heterogeneous source domain.
 
-\subsection{Online Heterogeneous Transfer Algorithms}
+\subsection{Online heterogeneous transfer algorithms}
 
 Given a hypothesis obtained from the hetegeneous source domain, we can utilize the ensemble learning strategy to design classifier.
 
@@ -291,7 +312,7 @@ $\mathbf{v} = \mathbf{0}$, $w_{1}^{s} \in (0,1)$, $w_{1} \in (0,1)$, where $w_{1
 \end{algorithm}
 
 
-\section{Theoretical Analysis of OHT Algorithms}
+\section{Theoretical analysis of OHT algorithms}
 In this section, we utilize $\mathbf{Hedge}(\beta)$ algorithm framework to help us understand OHT algorithms and derive mistake bound of OHT algorithms.
 
 At the $t$-th trial of online learning problem, $\mathbf{Hedge}(\beta)$ algorithm framework synthesizes opinions from different experts based on a weight vector $\mathbf{weight}_t$.
@@ -344,14 +365,14 @@ Based on Proposition 1, we can analyze the mistake bound of the proposed algorit
 
 \end{rem}
 
-\subsection{Mistake Bound of OHT1}
+\subsection{Mistake bound of OHT1}
 
 In OHT1 algorithms, $\ell_{t}^{s} = (\varOmega(h_{t}^{s}(\mathbf{x}_t)) - \varOmega(y_t)) ^ 2$, $\ell_t = (\varOmega(\mathbf{v}_t \cdot \mathbf{x}_t) - \varOmega(y_t)) ^ 2$, and $\beta = \exp\{-\eta\}$.
 According to Proposition 1, we derive the mistake bound of OHT1 as follows.
 
 \begin{thm}
 Let $M$ be the number of mistakes made by OHT1 algorithm, then we have 
-$$ M \leq \frac{2}{1-\beta} \min (\varDelta^s, \varDelta) $$
+$$ M \leq \frac{4}{1-\beta} \min (\varDelta^s, \varDelta) $$
 where
 $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t}^{s} $ and $ \varDelta = \ln(\frac{1}{w_{1}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=1}^{T} \ell_{t} $.
 %\begin{equation*}
@@ -391,7 +412,7 @@ $ \varDelta^s = \ln(\frac{1}{w_{1}^{s}}) + (\ln \frac{1}{\beta}) \sum\limits_{t=
 The theorem follows immediately.
 \end{proof}
 
-\subsection{Mistake Bound of OHT2}
+\subsection{Mistake bound of OHT2}
 
 In OHT2 algorithms, $\ell_{t}^{s} = I(y_t h_{t}^{s}(\mathbf{x}_t) \leq 0)$, $\ell_t = I(y_t (\mathbf{v}_t \cdot \mathbf{x}_t) \leq 0)$, and $\beta = \alpha$.
 The mistake bound of OHT2 is given by following theorem.
@@ -438,7 +459,7 @@ where $\varLambda^s = \sum\limits_{t=1}^{T}\ell_{t}^{s} + \ln(\frac{1}{w_{1}^{s}
 
 Theorem 3 can be proved by similar technique in \cite{1997decisionFreund}.
 
-\section{Experimental Results}
+\section{Experimental results}
 
 In this section, we empirically evaluate the performance of proposed online heterogeneous transfer learning algorithms and classic online Passive-Aggressive algorithms, which consists of a original version PA and its two variations PA-\uppercase\expandafter{\romannumeral1} and PA-\uppercase\expandafter{\romannumeral2}.
 Encouraging results demonstrate that the proposed algorithms outperform baseline methods.
@@ -457,7 +478,7 @@ We refer the images as the data in the target domain, and the tags as the text d
 Each binary classification task has 500 image instances in the target domain, 1,200 text instances in the heterogeneous source domain, and 1,500 co-occurred image-text pairs.
 In order to obtain stable results, we draw 100 times of random permutation of the image instances in the target domain and evaluate the performance of learning algorithms based on average rate of mistakes.
 
-\subsection{Baseline Methods}
+\subsection{Baseline methods}
 We compare the proposed methods with Passive-Aggressive online learning algorithms.
 PA algorithms proposed in \cite{2006onlineCrammer} does not exploit knowledge from the source domain.
 It deals with a traditional online learning problem.
@@ -465,11 +486,11 @@ As each of PA and OHT algorithms have three versions, we conduct three sets of e
 Each set of experiments compares two OHT methods against the Passive-Aggressive algorithm which use the same calculation method of learning rate $\tau$.
 
 For fair comparison and simplicity, we adopt Gaussian kernel function on all the algorithms and tasks, and the kernel parameter $\sigma = 8$.
-The regularization parameter $C = 5$, and $ \beta = \frac{\sqrt{T}}{\sqrt{T}+\sqrt{2\ln{4}}} $ for OHT2 algorithm.
+The regularization parameter $C = 5$, and $ \beta = \frac{\sqrt{T}}{\sqrt{T}+\sqrt{2\ln{2}}} $ for OHT2 algorithm.
 In addition, we set the number of nearest neighbors to be considered $K = 100$.
 Sensitivity of parameters will be examined in subsequent sections.
 
-\subsection{Results and Discussion}
+\subsection{Results and discussion}
 \begin{figure*}[!htb]
 %\begin{figure*}[H]
 \centering
@@ -552,7 +573,7 @@ For OHT2 algorithms, the numbers are 40 and 3.
 Combining the win/tie/loss results, we see that OHT1 is more stable than OHT2.
 
 
-\subsection{Parameters and Running Time}
+\subsection{Parameters and running time}
 % parameter sensitivity
 \paragraph{Parameters}
 %Experiments in paper about online transfer learning illustrated that the performance of online transfer learning algorithms is generally insensitive to the parameter $C$ and $\beta$.
